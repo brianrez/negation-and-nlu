@@ -16,7 +16,7 @@ DATA_DIR = "./content/exp/tasks"
 os.makedirs(DATA_DIR, exist_ok=True)
 
 # task_list = ["sst", "qqp", "stsb", "qnli", "copa", "wsc", "wic", "commonsenseqa"]
-task_list = ["commonsenseqa"]
+task_list = []
 
 for task in task_list:
     print("task: {}\n".format(task))
