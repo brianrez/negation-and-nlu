@@ -1,9 +1,0 @@
-{
-  "task": "sst",
-  "paths": {
-    "train": "~/negation-and-nlu/annotations-and-experiments/content/exp/tasks/data/sst/train.jsonl",
-    "test": "~/negation-and-nlu/annotations-and-experiments/content/exp/tasks/data/sst/test.jsonl",
-    "val": "~/negation-and-nlu/annotations-and-experiments/content/exp/tasks/data/sst/val.jsonl"
-  },
-  "name": "sst"
-}
