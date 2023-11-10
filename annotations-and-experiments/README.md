@@ -23,7 +23,7 @@ cd ..
 
 - To fine-tune RoBERTa model with the training dataset of a corpus (e.g., qqp, qnli): 
 ```bash
-  python train.py -c ./config/qqp/config.json
+  python train.py -c ./config/wsc/config.json
 ```
   + Arguments:
 	  - -c, --config_path: path to the configuration file, (required)

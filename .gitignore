@@ -1,0 +1,5 @@
+env/
+/annotations-and-experiments/models/
+/annotations-and-experiments/outputs/
+**.DS_Store
+*.DS_Store
