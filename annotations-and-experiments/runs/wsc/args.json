@@ -10,7 +10,7 @@
   "do_save": true,
   "do_save_last": false,
   "do_save_best": false,
-  "write_val_preds": false,
+  "write_val_preds": true,
   "write_test_preds": false,
   "eval_every_steps": 50000,
   "save_every_steps": 0,
