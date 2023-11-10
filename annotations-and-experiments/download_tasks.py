@@ -23,11 +23,9 @@ for task in task_list:
     downloader.download_data([task], DATA_DIR)
 '''
 
-'''
 # Download the roberta-base model
 # export_model.lookup_and_export_model(
 export_model.export_model(
-        hf_pretrained_model_name_or_path="roberta-base",
-        output_base_path="./models/roberta-base",
+        hf_pretrained_model_name_or_path="roberta-large",
+        output_base_path="./models/roberta-large",
     )
-'''
