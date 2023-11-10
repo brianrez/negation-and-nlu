@@ -46,8 +46,9 @@ if params["is_download_model"]:
 # Tokenize and cache-----------------------------------------------------
 tokenize_and_cache.main(tokenize_and_cache.RunConfiguration(
     task_config_path=f"./content/exp/tasks/configs/{TASK_NAME}_config.json",
-    model_type=MODEL_TYPE,
-    model_tokenizer_path=params["model_tokenizer_path"],
+    # model_type=MODEL_TYPE,
+    # model_tokenizer_path=params["model_tokenizer_path"],
+    hf_pretrained_model_name_or_path = "roberta-base",
     output_dir=f"./outputs/{TASK_NAME}",
     phases=["train", "val"],
 ))
@@ -75,10 +76,11 @@ print("Training Started----------")
 run_args = main_runscript.RunConfiguration(
     jiant_task_container_config_path=params["run_config"],
     output_dir="./runs/"+TASK_NAME,
-    model_type=MODEL_TYPE,
+    hf_pretrained_model_name_or_path = "roberta-base",
+    # model_type=MODEL_TYPE,
     model_path=params["model_path"],
     model_config_path=params["model_config_path"],
-    model_tokenizer_path=params["model_tokenizer_path"],
+    # model_tokenizer_path=params["model_tokenizer_path"],
     learning_rate= params["learning_rate"],
     eval_every_steps=50000,
     do_train=True,

@@ -1,0 +1,50 @@
+{
+  "task_config_path_dict": {
+    "qqp": "./content/exp/tasks/configs/qqp_config.json"
+  },
+  "task_cache_config_dict": {
+    "qqp": {
+      "train": "./outputs/qqp/train",
+      "val": "./outputs/qqp/val",
+      "val_labels": "./outputs/qqp/val_labels"
+    }
+  },
+  "sampler_config": {
+    "sampler_type": "ProportionalMultiTaskSampler"
+  },
+  "global_train_config": {
+    "max_steps": 68223,
+    "warmup_steps": 6822
+  },
+  "task_specific_configs_dict": {
+    "qqp": {
+      "train_batch_size": 16,
+      "eval_batch_size": 16,
+      "gradient_accumulation_steps": 1,
+      "eval_subset_num": 500
+    }
+  },
+  "taskmodels_config": {
+    "task_to_taskmodel_map": {
+      "qqp": "qqp"
+    },
+    "taskmodel_config_map": {
+      "qqp": null
+    }
+  },
+  "task_run_config": {
+    "train_task_list": [
+      "qqp"
+    ],
+    "train_val_task_list": [
+      "qqp"
+    ],
+    "val_task_list": [
+      "qqp"
+    ],
+    "test_task_list": []
+  },
+  "metric_aggregator_config": {
+    "metric_aggregator_type": "EqualMetricAggregator"
+  }
+}

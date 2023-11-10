@@ -15,8 +15,8 @@ DATA_DIR = "./content/exp/tasks"
 # Data -------------------------------------------
 os.makedirs(DATA_DIR, exist_ok=True)
 
-task_list = ["sst", "qqp", "stsb", "qnli", "copa", "wsc", "wic", "commonsenseqa"]
-
+# task_list = ["sst", "qqp", "stsb", "qnli", "copa", "wsc", "wic", "commonsenseqa"]
+task_list = ["commonsenseqa"]
 
 for task in task_list:
     print("task: {}\n".format(task))
@@ -24,7 +24,8 @@ for task in task_list:
 
 
 # Download the roberta-base model
-export_model.lookup_and_export_model(
-        model_type="roberta-base",
+# export_model.lookup_and_export_model(
+export_model.export_model(
+        hf_pretrained_model_name_or_path="roberta-base",
         output_base_path="./models/roberta-base",
     )
