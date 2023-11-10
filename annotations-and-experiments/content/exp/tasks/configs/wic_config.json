@@ -1,9 +1,9 @@
 {
   "task": "wic",
   "paths": {
-    "train": "/Users/mhrezaei/Documents/Research/negation/negation-and-nlu/annotations-and-experiments/content/exp/tasks/data/wic/train.jsonl",
-    "test": "/Users/mhrezaei/Documents/Research/negation/negation-and-nlu/annotations-and-experiments/content/exp/tasks/data/wic/test.jsonl",
-    "val": "/Users/mhrezaei/Documents/Research/negation/negation-and-nlu/annotations-and-experiments/content/exp/tasks/data/wic/val.jsonl"
+    "train": "~/negation-and-nlu/annotations-and-experiments/content/exp/tasks/data/wic/train.jsonl",
+    "test": "~/negation-and-nlu/annotations-and-experiments/content/exp/tasks/data/wic/test.jsonl",
+    "val": "~/negation-and-nlu/annotations-and-experiments/content/exp/tasks/data/wic/val.jsonl"
   },
   "name": "wic"
 }

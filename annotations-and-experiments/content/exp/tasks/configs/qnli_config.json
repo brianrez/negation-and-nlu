@@ -1,9 +1,9 @@
 {
   "task": "qnli",
   "paths": {
-    "train": "/Users/mhrezaei/Documents/Research/negation/negation-and-nlu/annotations-and-experiments/content/exp/tasks/data/qnli/train.jsonl",
-    "test": "/Users/mhrezaei/Documents/Research/negation/negation-and-nlu/annotations-and-experiments/content/exp/tasks/data/qnli/test.jsonl",
-    "val": "/Users/mhrezaei/Documents/Research/negation/negation-and-nlu/annotations-and-experiments/content/exp/tasks/data/qnli/val.jsonl"
+    "train": "~/negation-and-nlu/annotations-and-experiments/content/exp/tasks/data/qnli/train.jsonl",
+    "test": "~/negation-and-nlu/annotations-and-experiments/content/exp/tasks/data/qnli/test.jsonl",
+    "val": "~/negation-and-nlu/annotations-and-experiments/content/exp/tasks/data/qnli/val.jsonl"
   },
   "name": "qnli"
 }
