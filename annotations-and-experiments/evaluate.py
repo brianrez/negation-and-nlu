@@ -71,6 +71,7 @@ run_args = main_runscript.RunConfiguration(
     do_val=True,
     do_save=True,
     force_overwrite=True,
+    write_val_preds=True,
     seed=params["seed"]
 )
 main_runscript.run_loop(run_args)
