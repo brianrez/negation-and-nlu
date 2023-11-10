@@ -1,0 +1,9 @@
+{
+  "task": "qqp",
+  "paths": {
+    "train": "/home/cc/negation-and-nlu/annotations-and-experiments/content/exp/tasks/data/qqp/train.jsonl",
+    "test": "/home/cc/negation-and-nlu/annotations-and-experiments/content/exp/tasks/data/qqp/test.jsonl",
+    "val": "/home/cc/negation-and-nlu/annotations-and-experiments/content/exp/tasks/data/qqp/val.jsonl"
+  },
+  "name": "qqp"
+}

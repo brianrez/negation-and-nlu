@@ -1,0 +1,9 @@
+{
+  "task": "copa",
+  "paths": {
+    "train": "/home/cc/negation-and-nlu/annotations-and-experiments/content/exp/tasks/data/copa/train.jsonl",
+    "test": "/home/cc/negation-and-nlu/annotations-and-experiments/content/exp/tasks/data/copa/test.jsonl",
+    "val": "/home/cc/negation-and-nlu/annotations-and-experiments/content/exp/tasks/data/copa/val.jsonl"
+  },
+  "name": "copa"
+}

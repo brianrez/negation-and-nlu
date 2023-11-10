@@ -1,0 +1,5 @@
+{
+  "train": "./outputs/wsc/train",
+  "val": "./outputs/wsc/val",
+  "val_labels": "./outputs/wsc/val_labels"
+}
