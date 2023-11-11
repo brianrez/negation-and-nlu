@@ -85,9 +85,9 @@ def gpt_par(path, destination, key):
             print(f"{i}/{all_}", end="\r")
         return data
 
-    train = paraphraser(train)
+    train = paraphraser(train, key)
     print("train done")
-    val = paraphraser(val)
+    val = paraphraser(val, key)
     print("val done")
     # test = paraphraser(test)
     # print("test done")
