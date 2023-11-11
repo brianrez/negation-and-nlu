@@ -18,79 +18,126 @@ import jiant.utils.display as display
 import argparse
 import json 
 
-
+'''
 argParser = argparse.ArgumentParser()
 argParser.add_argument("-c", "--config_path", help="path of the configuration file", required=True)      
 args        = argParser.parse_args()
 config_path = args.config_path
+'''
 
 
-# Read parameters from json file
-with open(config_path) as json_file_obj: 
-	params = json.load(json_file_obj)
+def move_files(task, setting):
+    os.system("rm -rf ./content/exp/tasks/data/" + task + "/train.jsonl")
+    os.system("rm -rf ./content/exp/tasks/data/" + task + "/val.jsonl")
+    os.system("rm -rf ./content/exp/tasks/data/" + task + "/test.jsonl")
 
- 
+    os.system("cp ./data/" + task + "/" + setting + "/train.jsonl ./content/exp/tasks/data/" + task + "/train.jsonl")
+    os.system("cp ./data/" + task + "/" + setting + "/val.jsonl ./content/exp/tasks/data/" + task + "/val.jsonl")
+    os.system("cp ./data/" + task + "/" + setting + "/test.jsonl ./content/exp/tasks/data/" + task + "/test.jsonl")
 
-TASK_NAME = params["task_name"]
-MODEL_TYPE = params["model_type"]
-os.makedirs("./run_configs/", exist_ok=True)
+def run(task, model, setting, lr=None):
+    TASK_NAME = task
+    MODEL_TYPE = model
 
-# Download model
-if params["is_download_model"]:
-    export_model.lookup_and_export_model(
-        model_type=MODEL_TYPE,
-        output_base_path="./models/" + MODEL_TYPE,
+    config_path = "./config/"+ TASK_NAME + "/config.json"
+
+    # Read parameters from json file
+    with open(config_path) as json_file_obj: 
+        params = json.load(json_file_obj)
+    if lr is not None:
+        params["learning_rate"] = lr
+
+    for key in params:
+        if MODEL_TYPE == "roberta-base":
+            params[key] = params[key].replace("larege", "base")
+        elif MODEL_TYPE == "roberta-large":
+            params[key] = params[key].replace("base", "large")
+
+    os.makedirs("./run_configs/", exist_ok=True)
+
+    # Download model
+    if params["is_download_model"]:
+        export_model.lookup_and_export_model(
+            model_type=MODEL_TYPE,
+            output_base_path="./models/" + MODEL_TYPE,
+        )
+        
+
+    # Tokenize and cache-----------------------------------------------------
+    tokenize_and_cache.main(tokenize_and_cache.RunConfiguration(
+        task_config_path=f"./content/exp/tasks/configs/{TASK_NAME}_config.json",
+        # model_type=MODEL_TYPE,
+        # model_tokenizer_path=params["model_tokenizer_path"],
+        hf_pretrained_model_name_or_path = MODEL_TYPE,
+        output_dir=f"./outputs/{TASK_NAME}",
+        phases=["train", "val"],
+    ))
+    print("Tokenization is completed!")
+
+    # Write a run config -----------------------------------------------------------
+    jiant_run_config = configurator.SimpleAPIMultiTaskConfigurator(
+        task_config_base_path="./content/exp/tasks/configs",
+        task_cache_base_path="./outputs",
+        train_task_name_list=[TASK_NAME],
+        val_task_name_list=[TASK_NAME],
+        train_batch_size= params["train_batch_size"],
+        eval_batch_size= params["eval_batch_size"], 
+        epochs= params["num_epochs"],
+        num_gpus= params["num_gpus"],
+        #warmup_steps_proportion=params["warmup_steps_proportion"]
+    ).create_config()
+    py_io.write_json(jiant_run_config, params["run_config"]) 
+    display.show_json(jiant_run_config)
+    print("Configuration is set up!")
+
+
+    # Start training ------------------------------------------------------------------------
+    print("Training Started----------")
+    run_args = main_runscript.RunConfiguration(
+        jiant_task_container_config_path=params["run_config"],
+        output_dir="./runs/"+TASK_NAME,
+        hf_pretrained_model_name_or_path = MODEL_TYPE,
+        # model_type=MODEL_TYPE,
+        model_path=params["model_path"],
+        model_config_path=params["model_config_path"],
+        # model_tokenizer_path=params["model_tokenizer_path"],
+        learning_rate= params["learning_rate"],
+        eval_every_steps=50000,
+        do_train=True,
+        do_val=True,
+        do_save=True,
+        force_overwrite=True,
+        write_val_preds=True,
+
+        seed=params["seed"]
     )
-    
+    main_runscript.run_loop(run_args)
+    print("Training is completed!")
 
-# Tokenize and cache-----------------------------------------------------
-tokenize_and_cache.main(tokenize_and_cache.RunConfiguration(
-    task_config_path=f"./content/exp/tasks/configs/{TASK_NAME}_config.json",
-    # model_type=MODEL_TYPE,
-    # model_tokenizer_path=params["model_tokenizer_path"],
-    hf_pretrained_model_name_or_path = "roberta-large",
-    output_dir=f"./outputs/{TASK_NAME}",
-    phases=["train", "val"],
-))
-print("Tokenization is completed!")
+    val_save_path = "./preds/" + TASK_NAME + "/" + setting + "_" + MODEL_TYPE[8:] + "_" + str(params["learning_rate"]) + ".pt"
+    os.system("cp ./runs/" + TASK_NAME + "/val_preds.p " + val_save_path)
 
-# Write a run config -----------------------------------------------------------
-jiant_run_config = configurator.SimpleAPIMultiTaskConfigurator(
-    task_config_base_path="./content/exp/tasks/configs",
-    task_cache_base_path="./outputs",
-    train_task_name_list=[TASK_NAME],
-    val_task_name_list=[TASK_NAME],
-    train_batch_size= params["train_batch_size"],
-    eval_batch_size= params["eval_batch_size"], 
-    epochs= params["num_epochs"],
-    num_gpus= params["num_gpus"],
-    #warmup_steps_proportion=params["warmup_steps_proportion"]
-).create_config()
-py_io.write_json(jiant_run_config, params["run_config"]) 
-display.show_json(jiant_run_config)
-print("Configuration is set up!")
+# settings: "ch", "or", "mo"
+if __name__ == "__main__":
+    exp_ids = [
+        ['commonsenseqa', 'roberta-base', 'ch'],
+        ['commonsenseqa', 'roberta-base', 'or'],
+        ['commonsenseqa', 'roberta-base', 'mo'],
+    ]
 
+    for exp_id in exp_ids:
+        errors = open("errors.txt", "a")
+        try:
+            task, model, setting = exp_id
+            move_files(task, setting)
+            run(task, model, setting)
 
-# Start training ------------------------------------------------------------------------
-print("Training Started----------")
-run_args = main_runscript.RunConfiguration(
-    jiant_task_container_config_path=params["run_config"],
-    output_dir="./runs/"+TASK_NAME,
-    hf_pretrained_model_name_or_path = "roberta-large",
-    # model_type=MODEL_TYPE,
-    model_path=params["model_path"],
-    model_config_path=params["model_config_path"],
-    # model_tokenizer_path=params["model_tokenizer_path"],
-    learning_rate= params["learning_rate"],
-    eval_every_steps=50000,
-    do_train=True,
-    do_val=True,
-    do_save=True,
-    force_overwrite=True,
-    write_val_preds=True,
-
-    seed=params["seed"]
-)
-main_runscript.run_loop(run_args)
-print("Training is completed!")
-
+            
+            os.system("git add .")
+            os.system("git commit -m \" " + task + "_" + model + "_" + setting + " \"")
+            os.system("git push")
+            errors.close()
+        except Exception as e:
+            errors.write(str(exp_id) + "\n" + str(e) + "\n")
+            errors.write("--------------------------------------------------\n")
+            errors.close()
