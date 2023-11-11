@@ -72,7 +72,7 @@ class jsonl:
 def gpt_par(path, destination, key):
     train = jsonl().read(path + "/train.jsonl")
     val = jsonl().read(path + "/val.jsonl")
-    test = jsonl().read(path + "/test.jsonl")
+    # test = jsonl().read(path + "/test.jsonl")
 
     def paraphraser(data, key):
         all_ = len(data)
@@ -89,20 +89,28 @@ def gpt_par(path, destination, key):
     print("train done")
     val = paraphraser(val)
     print("val done")
-    test = paraphraser(test)
-    print("test done")
+    # test = paraphraser(test)
+    # print("test done")
 
     jsonl().write(destination + "/train.jsonl", train)
     jsonl().write(destination + "/val.jsonl", val)
-    jsonl().write(destination + "/test.jsonl", test)
+    # jsonl().write(destination + "/test.jsonl", test)
 
 
 gpt_par("./content/exp/tasks/data/commonsenseqa", "./data/commonsenseqa/ch", "question")
+print("commonsenseqa done")
 gpt_par("./content/exp/tasks/data/wsc", "./data/wsc/ch", "text")
+print("wsc done")
 gpt_par("./content/exp/tasks/data/wic", "./data/wic/ch", "sentence1")
+print("wic done")
 gpt_par("./data/wic/ch", "./data/wic/ch", "sentence2")
+print("wic done")
 gpt_par("./content/exp/tasks/data/stsb", "./data/stsb/ch", "text_a")
+print("stsb done")
 gpt_par("./data/stsb/ch", "./data/stsb/ch", "text_b")
+print("stsb done")
 gpt_par("./content/exp/tasks/data/qnli", "./data/qnli/ch", "hypothesis")
+print("qnli done")
 gpt_par("./content/exp/tasks/data/qnli", "./data/qnli/ch", "premise")
+print("qnli done")
 
