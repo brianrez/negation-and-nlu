@@ -1,0 +1,50 @@
+{
+  "task_config_path_dict": {
+    "commonsenseqa": "./content/exp/tasks/configs/commonsenseqa_config.json"
+  },
+  "task_cache_config_dict": {
+    "commonsenseqa": {
+      "train": "./outputs/commonsenseqa/train",
+      "val": "./outputs/commonsenseqa/val",
+      "val_labels": "./outputs/commonsenseqa/val_labels"
+    }
+  },
+  "sampler_config": {
+    "sampler_type": "ProportionalMultiTaskSampler"
+  },
+  "global_train_config": {
+    "max_steps": 6090,
+    "warmup_steps": 609
+  },
+  "task_specific_configs_dict": {
+    "commonsenseqa": {
+      "train_batch_size": 16,
+      "eval_batch_size": 16,
+      "gradient_accumulation_steps": 1,
+      "eval_subset_num": 500
+    }
+  },
+  "taskmodels_config": {
+    "task_to_taskmodel_map": {
+      "commonsenseqa": "commonsenseqa"
+    },
+    "taskmodel_config_map": {
+      "commonsenseqa": null
+    }
+  },
+  "task_run_config": {
+    "train_task_list": [
+      "commonsenseqa"
+    ],
+    "train_val_task_list": [
+      "commonsenseqa"
+    ],
+    "val_task_list": [
+      "commonsenseqa"
+    ],
+    "test_task_list": []
+  },
+  "metric_aggregator_config": {
+    "metric_aggregator_type": "EqualMetricAggregator"
+  }
+}
