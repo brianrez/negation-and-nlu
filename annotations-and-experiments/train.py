@@ -48,7 +48,7 @@ tokenize_and_cache.main(tokenize_and_cache.RunConfiguration(
     task_config_path=f"./content/exp/tasks/configs/{TASK_NAME}_config.json",
     # model_type=MODEL_TYPE,
     # model_tokenizer_path=params["model_tokenizer_path"],
-    hf_pretrained_model_name_or_path = "roberta-base",
+    hf_pretrained_model_name_or_path = "roberta-large",
     output_dir=f"./outputs/{TASK_NAME}",
     phases=["train", "val"],
 ))
@@ -76,7 +76,7 @@ print("Training Started----------")
 run_args = main_runscript.RunConfiguration(
     jiant_task_container_config_path=params["run_config"],
     output_dir="./runs/"+TASK_NAME,
-    hf_pretrained_model_name_or_path = "roberta-base",
+    hf_pretrained_model_name_or_path = "roberta-large",
     # model_type=MODEL_TYPE,
     model_path=params["model_path"],
     model_config_path=params["model_config_path"],
@@ -93,3 +93,4 @@ run_args = main_runscript.RunConfiguration(
 )
 main_runscript.run_loop(run_args)
 print("Training is completed!")
+
