@@ -125,10 +125,11 @@ print("stsb done")
 gpt_par("./data/stsb/ch", "./data/stsb/ch", "text_b")
 print("stsb done")
 '''
-# gpt_par("./content/exp/tasks/data/qnli", "./data/qnli/ch", "hypothesis")
 # print("qnli done")
-gpt_par("./content/exp/tasks/data/qnli", "./data/qnli/ch2", "premise")
+#  gpt_par("./content/exp/tasks/data/qnli", "./data/qnli/ch2", "premise")
+gpt_par("./data/qnli/ch2", "./data/qnli/ch", "hypothesis")
 print("qnli done")
+
 import requests
 requests.post("https://ntfy.sh/mhrnlpmodels",
-    data="Chameleon: qnli premises done!".encode(encoding='utf-8'))
+    data="Chameleon: qnli hypotheses done!".encode(encoding='utf-8'))
