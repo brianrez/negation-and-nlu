@@ -1,5 +1,5 @@
 {
-  "jiant_task_container_config_path": "./run_configs/commonsenseqa_run_config_roberta_base.json",
+  "jiant_task_container_config_path": "./run_configs/commonsenseqa_run_config_roberta_large.json",
   "output_dir": "./runs/commonsenseqa",
   "hf_pretrained_model_name_or_path": "roberta-large",
   "model_path": "./models/roberta-large/model/roberta-large.p",
