@@ -142,15 +142,18 @@ def run(task, model, setting, lr=None):
         + str(params["learning_rate"])
         + ".pt"
     )
+    if not os.path.exists("./preds/" + TASK_NAME + "/"):
+        os.makedirs("./preds/" + TASK_NAME + "/")
+        
     os.system("cp ./runs/" + TASK_NAME + "/val_preds.p " + val_save_path)
 
 
 # settings: "ch", "or", "mo"
 if __name__ == "__main__":
     exp_ids = [
-        ["qnli", "roberta-base", "or"],
-        ["stsb", "roberta-base", "or"],
-        ["wic",  "roberta-base", "or"],
+        # ["qnli", "roberta-base", "or"],
+        # ["stsb", "roberta-base", "or"],
+        # ["wic",  "roberta-base", "or"],
 
         ["qnli", "roberta-large", "or"],
         ["stsb", "roberta-large", "or"],
@@ -171,10 +174,12 @@ if __name__ == "__main__":
 
     for exp_id in exp_ids:
         errors = open("errors.txt", "a")
+        dones = open("dones.txt", "a")
         try:
             task, model, setting = exp_id
             move_files(task, setting)
             run(task, model, setting)
+            dones.write(str(exp_id) + "\n")
 
             os.system("git add .")
             os.system('git commit -m " ' + task + "_" + model + "_" + setting + ' "')
