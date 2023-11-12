@@ -125,8 +125,8 @@ print("stsb done")
 gpt_par("./data/stsb/ch", "./data/stsb/ch", "text_b")
 print("stsb done")
 '''
-gpt_par("./content/exp/tasks/data/qnli", "./data/qnli/ch", "hypothesis")
-print("qnli done")
-gpt_par("./content/exp/tasks/data/qnli", "./data/qnli/ch", "premise")
+# gpt_par("./content/exp/tasks/data/qnli", "./data/qnli/ch", "hypothesis")
+# print("qnli done")
+gpt_par("./content/exp/tasks/data/qnli", "./data/qnli/ch2", "premise")
 print("qnli done")
 
