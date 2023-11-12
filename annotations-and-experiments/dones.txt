@@ -2,3 +2,4 @@
 ['stsb', 'roberta-large', 'or']
 ['wic', 'roberta-large', 'or']
 ['commonsenseqa', 'roberta-large', 'ch']
+['wic', 'roberta-large', 'ch']
