@@ -3,3 +3,4 @@
 ['wic', 'roberta-large', 'or']
 ['commonsenseqa', 'roberta-large', 'ch']
 ['wic', 'roberta-large', 'ch']
+['stsb', 'roberta-large', 'ch']
