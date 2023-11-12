@@ -1,9 +1,9 @@
 {
-  "jiant_task_container_config_path": "./run_configs/wic_run_config_roberta_base.json",
+  "jiant_task_container_config_path": "./run_configs/wic_run_config_roberta_large.json",
   "output_dir": "./runs/wic",
-  "hf_pretrained_model_name_or_path": "roberta-base",
-  "model_path": "./models/roberta-base/model/roberta-base.p",
-  "model_config_path": "./models/roberta-base/model/roberta-base.json",
+  "hf_pretrained_model_name_or_path": "roberta-large",
+  "model_path": "./models/roberta-large/model/roberta-large.p",
+  "model_config_path": "./models/roberta-large/model/roberta-large.json",
   "model_load_mode": "from_transformers",
   "do_train": true,
   "do_val": true,
