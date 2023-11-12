@@ -1,0 +1,50 @@
+{
+  "task_config_path_dict": {
+    "qnli": "./content/exp/tasks/configs/qnli_config.json"
+  },
+  "task_cache_config_dict": {
+    "qnli": {
+      "train": "./outputs/qnli/train",
+      "val": "./outputs/qnli/val",
+      "val_labels": "./outputs/qnli/val_labels"
+    }
+  },
+  "sampler_config": {
+    "sampler_type": "ProportionalMultiTaskSampler"
+  },
+  "global_train_config": {
+    "max_steps": 39279,
+    "warmup_steps": 3927
+  },
+  "task_specific_configs_dict": {
+    "qnli": {
+      "train_batch_size": 8,
+      "eval_batch_size": 8,
+      "gradient_accumulation_steps": 1,
+      "eval_subset_num": 500
+    }
+  },
+  "taskmodels_config": {
+    "task_to_taskmodel_map": {
+      "qnli": "qnli"
+    },
+    "taskmodel_config_map": {
+      "qnli": null
+    }
+  },
+  "task_run_config": {
+    "train_task_list": [
+      "qnli"
+    ],
+    "train_val_task_list": [
+      "qnli"
+    ],
+    "val_task_list": [
+      "qnli"
+    ],
+    "test_task_list": []
+  },
+  "metric_aggregator_config": {
+    "metric_aggregator_type": "EqualMetricAggregator"
+  }
+}

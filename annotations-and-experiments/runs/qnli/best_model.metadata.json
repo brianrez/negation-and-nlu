@@ -1,0 +1,27 @@
+{
+  "val_state": {
+    "score": 0.912,
+    "metrics": {
+      "qnli": {
+        "major": 0.912,
+        "minor": {
+          "acc": 0.912
+        }
+      }
+    },
+    "train_state": {
+      "global_steps": 39279,
+      "task_steps": {
+        "qnli": 39279
+      }
+    }
+  },
+  "val_metrics": {
+    "qnli": {
+      "major": 0.912,
+      "minor": {
+        "acc": 0.912
+      }
+    }
+  }
+}
