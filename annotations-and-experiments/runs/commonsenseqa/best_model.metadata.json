@@ -1,11 +1,11 @@
 {
   "val_state": {
-    "score": 0.678,
+    "score": 0.686,
     "metrics": {
       "commonsenseqa": {
-        "major": 0.678,
+        "major": 0.686,
         "minor": {
-          "acc": 0.678
+          "acc": 0.686
         }
       }
     },
@@ -18,9 +18,9 @@
   },
   "val_metrics": {
     "commonsenseqa": {
-      "major": 0.678,
+      "major": 0.686,
       "minor": {
-        "acc": 0.678
+        "acc": 0.686
       }
     }
   }
