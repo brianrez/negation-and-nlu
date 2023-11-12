@@ -1,2 +1,3 @@
 ['qnli', 'roberta-large', 'or']
 ['stsb', 'roberta-large', 'or']
+['wic', 'roberta-large', 'or']
