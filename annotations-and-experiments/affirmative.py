@@ -129,4 +129,6 @@ print("stsb done")
 # print("qnli done")
 gpt_par("./content/exp/tasks/data/qnli", "./data/qnli/ch2", "premise")
 print("qnli done")
-
+import requests
+requests.post("https://ntfy.sh/mhrnlpmodels",
+    data="Chameleon: qnli premises done!".encode(encoding='utf-8'))
