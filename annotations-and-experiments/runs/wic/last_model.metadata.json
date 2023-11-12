@@ -1,0 +1,8 @@
+{
+  "train_state": {
+    "global_steps": 3400,
+    "task_steps": {
+      "wic": 3400
+    }
+  }
+}
