@@ -89,7 +89,7 @@ def gpt_par(path, destination, key):
         batches = [data[i:i + batch_size] for i in range(0, all_, batch_size)]
         j = 0
         for batch in batches:
-            i += batch_size
+            j += batch_size
             sentences = [row[key] for row in batch]
             paraphrased = affir_gen(sentences)
 
