@@ -87,7 +87,7 @@ def gpt_par(path, destination, key):
     def paraphraser(data, key, batch_size=32):
         all_ = len(data)
         batches = [data[i:i + batch_size] for i in range(0, all_, batch_size)]
-        i = 0
+        j = 0
         for batch in batches:
             i += batch_size
             sentences = [row[key] for row in batch]
@@ -96,7 +96,7 @@ def gpt_par(path, destination, key):
             for i, row in enumerate(batch):
                 row[key] = sentences[i] + " Affirmative interpretation: " + paraphrased[i]
         
-            print(f"{i}/{all_}")
+            print(f"{j}/{all_}")
 
         return data
 
