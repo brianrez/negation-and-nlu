@@ -65,9 +65,11 @@ def run(task, model, setting, lr=None):
 
     for key in params:
         if MODEL_TYPE == "roberta-base":
-            params[key] = params[key].replace("larege", "base")
+            if type(params[key]) == str:
+                params[key] = params[key].replace("larege", "base")
         elif MODEL_TYPE == "roberta-large":
-            params[key] = params[key].replace("base", "large")
+            if type(params[key]) == str:
+                params[key] = params[key].replace("base", "large")
 
     os.makedirs("./run_configs/", exist_ok=True)
 
@@ -155,16 +157,16 @@ if __name__ == "__main__":
         ["wic",  "roberta-large", "or"],
 
         ["commonsenseqa", "roberta-large", "ch"],
-        ["qnli",          "roberta-large", "ch"],
-        ["stsb",          "roberta-large", "ch"],
-        ["wic",           "roberta-large", "ch"],
         ["wsc",           "roberta-large", "ch"],
+        ["wic",           "roberta-large", "ch"],
+        ["stsb",          "roberta-large", "ch"],
+        ["qnli",          "roberta-large", "ch"],
 
         ["commonsenseqa", "roberta-large", "mo"],
-        ["qnli",          "roberta-large", "mo"],
-        ["stsb",          "roberta-large", "mo"],
-        ["wic",           "roberta-large", "mo"],
         ["wsc",           "roberta-large", "mo"],
+        ["wic",           "roberta-large", "mo"],
+        ["stsb",          "roberta-large", "mo"],
+        ["qnli",          "roberta-large", "mo"],
     ]
 
     for exp_id in exp_ids:
