@@ -1,0 +1,50 @@
+{
+  "task_config_path_dict": {
+    "stsb": "./content/exp/tasks/configs/stsb_config.json"
+  },
+  "task_cache_config_dict": {
+    "stsb": {
+      "train": "./outputs/stsb/train",
+      "val": "./outputs/stsb/val",
+      "val_labels": "./outputs/stsb/val_labels"
+    }
+  },
+  "sampler_config": {
+    "sampler_type": "ProportionalMultiTaskSampler"
+  },
+  "global_train_config": {
+    "max_steps": 3600,
+    "warmup_steps": 360
+  },
+  "task_specific_configs_dict": {
+    "stsb": {
+      "train_batch_size": 16,
+      "eval_batch_size": 16,
+      "gradient_accumulation_steps": 1,
+      "eval_subset_num": 500
+    }
+  },
+  "taskmodels_config": {
+    "task_to_taskmodel_map": {
+      "stsb": "stsb"
+    },
+    "taskmodel_config_map": {
+      "stsb": null
+    }
+  },
+  "task_run_config": {
+    "train_task_list": [
+      "stsb"
+    ],
+    "train_val_task_list": [
+      "stsb"
+    ],
+    "val_task_list": [
+      "stsb"
+    ],
+    "test_task_list": []
+  },
+  "metric_aggregator_config": {
+    "metric_aggregator_type": "EqualMetricAggregator"
+  }
+}
