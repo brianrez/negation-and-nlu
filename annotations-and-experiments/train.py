@@ -159,14 +159,14 @@ if __name__ == "__main__":
         # ["stsb", "roberta-large", "or"],
         # ["wic",  "roberta-large", "or"],
         # ["commonsenseqa", "roberta-large", "ch"],
-        # ["wsc",           "roberta-large", "ch"],
+        ["wsc",           "roberta-large", "ch"],
         # ["wic",           "roberta-large", "ch"],
         # ["stsb",          "roberta-large", "ch"],
         # ["qnli",          "roberta-large", "ch"], # yet to be done
-        ["commonsenseqa", "roberta-large", "mo"],
+        # ["commonsenseqa", "roberta-large", "mo"],
         ["wsc", "roberta-large", "mo"],
-        ["wic", "roberta-large", "mo"],
-        ["stsb", "roberta-large", "mo"],
+        # ["wic", "roberta-large", "mo"],
+        # ["stsb", "roberta-large", "mo"],
         # ["qnli",          "roberta-large", "mo"], # yet to be done
     ]
 
@@ -205,6 +205,7 @@ if __name__ == "__main__":
                 + setting
                 + " is failed!"
             )
+            print(notif)
             requests.post(
                 "https://ntfy.sh/mhrnlpmodels",
                 data=notif.encode(encoding="utf-8"),

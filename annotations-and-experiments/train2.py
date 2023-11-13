@@ -162,13 +162,13 @@ if __name__ == "__main__":
         # ["wsc",           "roberta-large", "ch"],
         # ["wic",           "roberta-large", "ch"],
         # ["stsb",          "roberta-large", "ch"],
-        # ["qnli",          "roberta-large", "ch"], # yet to be done
+        ["qnli",          "roberta-large", "ch"], # yet to be done
         
         # ["commonsenseqa", "roberta-large", "mo"],
         # ["wsc", "roberta-large", "mo"],
         # ["wic", "roberta-large", "mo"],
         #  ["stsb", "roberta-large", "mo"],
-        ["qnli",          "roberta-large", "mo"], # yet to be done
+        # ["qnli",          "roberta-large", "mo"], 
     ]
 
     for exp_id in exp_ids:
