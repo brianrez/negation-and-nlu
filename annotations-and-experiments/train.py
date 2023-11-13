@@ -18,6 +18,7 @@ import jiant.utils.display as display
 
 import argparse
 import json
+import requests
 
 """
 argParser = argparse.ArgumentParser()
@@ -144,7 +145,7 @@ def run(task, model, setting, lr=None):
     )
     if not os.path.exists("./preds/" + TASK_NAME + "/"):
         os.makedirs("./preds/" + TASK_NAME + "/")
-        
+
     os.system("cp ./runs/" + TASK_NAME + "/val_preds.p " + val_save_path)
 
 
@@ -154,22 +155,19 @@ if __name__ == "__main__":
         # ["qnli", "roberta-base", "or"],
         # ["stsb", "roberta-base", "or"],
         # ["wic",  "roberta-base", "or"],
-
-        ["qnli", "roberta-large", "or"],
-        ["stsb", "roberta-large", "or"],
-        ["wic",  "roberta-large", "or"],
-
-        ["commonsenseqa", "roberta-large", "ch"],
-        ["wsc",           "roberta-large", "ch"],
-        ["wic",           "roberta-large", "ch"],
-        ["stsb",          "roberta-large", "ch"],
-        ["qnli",          "roberta-large", "ch"],
-
+        # ["qnli", "roberta-large", "or"],
+        # ["stsb", "roberta-large", "or"],
+        # ["wic",  "roberta-large", "or"],
+        # ["commonsenseqa", "roberta-large", "ch"],
+        # ["wsc",           "roberta-large", "ch"],
+        # ["wic",           "roberta-large", "ch"],
+        # ["stsb",          "roberta-large", "ch"],
+        # ["qnli",          "roberta-large", "ch"], # yet to be done
         ["commonsenseqa", "roberta-large", "mo"],
-        ["wsc",           "roberta-large", "mo"],
-        ["wic",           "roberta-large", "mo"],
-        ["stsb",          "roberta-large", "mo"],
-        ["qnli",          "roberta-large", "mo"],
+        ["wsc", "roberta-large", "mo"],
+        ["wic", "roberta-large", "mo"],
+        ["stsb", "roberta-large", "mo"],
+        # ["qnli",          "roberta-large", "mo"], # yet to be done
     ]
 
     for exp_id in exp_ids:
@@ -184,8 +182,34 @@ if __name__ == "__main__":
             os.system("git add .")
             os.system('git commit -m " ' + task + "_" + model + "_" + setting + ' "')
             os.system("git push")
+            notif = (
+                "Training of "
+                + task
+                + " with "
+                + model
+                + " and "
+                + setting
+                + " is done!"
+            )
+            requests.post(
+                "https://ntfy.sh/mhrnlpmodels", data=notif.encode(encoding="utf-8")
+            )
             errors.close()
         except Exception as e:
+            notif = (
+                "Training of "
+                + task
+                + " with "
+                + model
+                + " and "
+                + setting
+                + " is failed!"
+            )
+            requests.post(
+                "https://ntfy.sh/mhrnlpmodels",
+                data=notif.encode(encoding="utf-8"),
+                headers={"Priority": "5"},
+            )
             errors.write(str(exp_id) + "\n" + str(e) + "\n")
             errors.write("--------------------------------------------------\n")
             errors.close()
