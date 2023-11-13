@@ -1,0 +1,2 @@
+{"score": 0.182, "metrics": {"commonsenseqa": {"major": 0.182, "minor": {"acc": 0.182}}}, "train_state": {"global_steps": 6090, "task_steps": {"commonsenseqa": 6090}}, "TIMESTAMP": 1699863646.7705297}
+{"score": 0.182, "metrics": {"commonsenseqa": {"major": 0.182, "minor": {"acc": 0.182}}}, "train_state": {"global_steps": 6090, "task_steps": {"commonsenseqa": 6090}}, "TIMESTAMP": 1699863675.9669783}
