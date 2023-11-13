@@ -1,23 +1,11 @@
 ['wsc', 'roberta-large', 'ch']
 
 --------------------------------------------------
-['qnli', 'roberta-large', 'ch']
-[Errno 2] No such file or directory: '/home/cc/negation-and-nlu/annotations-and-experiments/content/exp/tasks/data/qnli/train.jsonl'
---------------------------------------------------
-['commonsenseqa', 'roberta-large', 'mo']
-[Errno 2] No such file or directory: '/home/cc/negation-and-nlu/annotations-and-experiments/content/exp/tasks/data/commonsenseqa/train.jsonl'
---------------------------------------------------
 ['wsc', 'roberta-large', 'mo']
-[Errno 2] No such file or directory: '/home/cc/negation-and-nlu/annotations-and-experiments/content/exp/tasks/data/wsc/train.jsonl'
+
 --------------------------------------------------
-['wic', 'roberta-large', 'mo']
-[Errno 2] No such file or directory: '/home/cc/negation-and-nlu/annotations-and-experiments/content/exp/tasks/data/wic/train.jsonl'
---------------------------------------------------
-['stsb', 'roberta-large', 'mo']
-[Errno 2] No such file or directory: '/home/cc/negation-and-nlu/annotations-and-experiments/content/exp/tasks/data/stsb/train.jsonl'
---------------------------------------------------
-['qnli', 'roberta-large', 'mo']
-[Errno 2] No such file or directory: '/home/cc/negation-and-nlu/annotations-and-experiments/content/exp/tasks/data/qnli/train.jsonl'
+['wsc', 'roberta-large', 'ch']
+
 --------------------------------------------------
 ['wsc', 'roberta-large', 'mo']
 
