@@ -32,9 +32,13 @@ def clean_pad(path, key):
     jsonl().write(path +   "/val.jsonl", val  )
     # jsonl().write(path + "/test.jsonl", test)
 
+'''
 clean_pad("./data/commonsenseqa/mo", "question")
 clean_pad("./data/wsc/mo", "text")
 clean_pad("./data/wic/mo", "sentence1")
 clean_pad("./data/wic/mo", "sentence2")
 clean_pad("./data/stsb/mo", "text_a")
 clean_pad("./data/stsb/mo", "text_b")
+'''
+clean_pad("./data/qnli/mo", "premise")
+clean_pad("./data/qnli/mo", "hypothesis")
