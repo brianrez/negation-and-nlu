@@ -174,7 +174,8 @@ if __name__ == "__main__":
     for exp_id in exp_ids:
         errors = open("errors.txt", "a")
         dones = open("dones.txt", "a")
-        try:
+        # try:
+        if True:
             task, model, setting = exp_id
             move_files(task, setting)
             run(task, model, setting)
@@ -196,7 +197,8 @@ if __name__ == "__main__":
                 "https://ntfy.sh/mhrnlpmodels", data=notif.encode(encoding="utf-8")
             )
             errors.close()
-        except Exception as e:
+        # except Exception as e:
+        else:
             notif = (
                 "Training of "
                 + task
