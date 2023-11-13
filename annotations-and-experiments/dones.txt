@@ -6,3 +6,4 @@
 ['stsb', 'roberta-large', 'ch']
 ['qnli', 'roberta-large', 'mo']
 ['commonsenseqa', 'roberta-large', 'mo']
+['wic', 'roberta-large', 'mo']
