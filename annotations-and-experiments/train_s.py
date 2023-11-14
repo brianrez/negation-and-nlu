@@ -123,7 +123,7 @@ def run(task, model, setting, lr=None, batch_size=None):
         model_path=params["model_path"],
         model_config_path=params["model_config_path"],
         # model_tokenizer_path=params["model_tokenizer_path"],
-        learning_rate=params["learning_rate"],
+        learning_rate=float(params["learning_rate"]),
         eval_every_steps=50000,
         do_train=True,
         do_val=True,
