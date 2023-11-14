@@ -10,3 +10,72 @@
 ['wsc', 'roberta-large', 'mo']
 
 --------------------------------------------------
+['commonsenseqa', 'roberta-large', 'ch', '1e-6']
+name 'r' is not defined
+--------------------------------------------------
+['commonsenseqa', 'roberta-large', 'ch', '5e-6']
+name 'r' is not defined
+--------------------------------------------------
+['commonsenseqa', 'roberta-large', 'ch', '5e-5']
+name 'r' is not defined
+--------------------------------------------------
+['commonsenseqa', 'roberta-large', 'ch', '1e-4']
+name 'r' is not defined
+--------------------------------------------------
+['commonsenseqa', 'roberta-large', 'ch', '1e-6']
+name 'r' is not defined
+--------------------------------------------------
+['commonsenseqa', 'roberta-large', 'ch', '5e-6']
+name 'r' is not defined
+--------------------------------------------------
+['commonsenseqa', 'roberta-large', 'ch', '5e-5']
+name 'r' is not defined
+--------------------------------------------------
+['commonsenseqa', 'roberta-large', 'ch', '1e-4']
+name 'r' is not defined
+--------------------------------------------------
+['qnli', 'roberta-large', 'ch', '1e-6']
+'<' not supported between instances of 'str' and 'float'
+--------------------------------------------------
+['commonsenseqa', 'roberta-large', 'ch', '1e-6']
+'<' not supported between instances of 'str' and 'float'
+--------------------------------------------------
+['stsb', 'roberta-large', 'ch', '1e-6']
+'<' not supported between instances of 'str' and 'float'
+--------------------------------------------------
+['stsb', 'roberta-large', 'ch', '5e-6']
+'<' not supported between instances of 'str' and 'float'
+--------------------------------------------------
+['commonsenseqa', 'roberta-large', 'ch', '5e-6']
+'<' not supported between instances of 'str' and 'float'
+--------------------------------------------------
+['wsc', 'roberta-large', 'ch', '5e-6']
+'<' not supported between instances of 'str' and 'float'
+--------------------------------------------------
+['stsb', 'roberta-large', 'ch', '5e-5']
+'<' not supported between instances of 'str' and 'float'
+--------------------------------------------------
+['stsb', 'roberta-large', 'ch', '1e-4']
+'<' not supported between instances of 'str' and 'float'
+--------------------------------------------------
+['commonsenseqa', 'roberta-large', 'ch', '5e-5']
+'<' not supported between instances of 'str' and 'float'
+--------------------------------------------------
+['wsc', 'roberta-large', 'ch', '1e-5']
+'<' not supported between instances of 'str' and 'float'
+--------------------------------------------------
+['commonsenseqa', 'roberta-large', 'ch', '1e-4']
+'<' not supported between instances of 'str' and 'float'
+--------------------------------------------------
+['qnli', 'roberta-large', 'ch', '5e-6']
+'<' not supported between instances of 'str' and 'float'
+--------------------------------------------------
+['wsc', 'roberta-large', 'ch', '5e-5']
+'<' not supported between instances of 'str' and 'float'
+--------------------------------------------------
+['wsc', 'roberta-large', 'ch', '1e-4']
+'<' not supported between instances of 'str' and 'float'
+--------------------------------------------------
+['qnli', 'roberta-large', 'ch', '5e-5']
+'<' not supported between instances of 'str' and 'float'
+--------------------------------------------------
