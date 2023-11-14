@@ -33,3 +33,4 @@
 ['commonsenseqa', 'roberta-large', 'ch', '1e-4']
 ['wsc', 'roberta-large', 'mo', '1e-5']
 ['stsb', 'roberta-large', 'mo', '1e-4']
+['wsc', 'roberta-large', 'mo', '5e-5']
