@@ -9,3 +9,4 @@
 ['wic', 'roberta-large', 'mo']
 ['stsb', 'roberta-large', 'mo']
 ['qnli', 'roberta-large', 'ch']
+['wsc', 'roberta-large', 'ch']
