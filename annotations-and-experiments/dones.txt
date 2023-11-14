@@ -46,3 +46,4 @@
 ['qnli', 'roberta-large', 'ch', '1e-6']
 ['stsb', 'roberta-large', 'mo', '5e-6']
 ['commonsenseqa', 'roberta-large', 'ch', '1e-6']
+['wsc', 'roberta-large', 'ch', '1e-4']

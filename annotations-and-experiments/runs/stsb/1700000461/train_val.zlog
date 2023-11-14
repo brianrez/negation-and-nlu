@@ -1,0 +1,2 @@
+{"score": 0.94339566533388, "metrics": {"stsb": {"major": 0.94339566533388, "minor": {"pearson": 0.9459598703547409, "spearmanr": 0.9408314603130189, "corr": 0.94339566533388}}}, "train_state": {"global_steps": 3600, "task_steps": {"stsb": 3600}}, "TIMESTAMP": 1700001909.4558597}
+{"score": 0.94339566533388, "metrics": {"stsb": {"major": 0.94339566533388, "minor": {"pearson": 0.9459598703547409, "spearmanr": 0.9408314603130189, "corr": 0.94339566533388}}}, "train_state": {"global_steps": 3600, "task_steps": {"stsb": 3600}}, "TIMESTAMP": 1700001924.330145}
