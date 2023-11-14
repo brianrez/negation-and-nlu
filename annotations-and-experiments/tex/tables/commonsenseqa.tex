@@ -1,3 +1,4 @@
+
 \begin{table*}
 \centering
 \begin{tabular}{lrrrr}
@@ -8,10 +9,10 @@ Model & acc. & prec. & rec. & F1 \\
 \textbf{RoBERTa-base} \\
 ~~~~W/out affir. intp. \\
 ~~~~~~~~\textit{Mosharaf} \\
-~~~~~~~~~~~~w/out negation \\ 
-~~~~~~~~~~~~w/ negation \\ 
-~~~~~~~~~~~~~~~~Important \\ 
-~~~~~~~~~~~~~~~~Unimportant \\ 
+~~~~~~~~~~~~w/out negation &&&& 0.60\\ 
+~~~~~~~~~~~~w/ negation &&&&0.53\\ 
+~~~~~~~~~~~~~~~~Important &&&&0.47\\ 
+~~~~~~~~~~~~~~~~Unimportant &&&&0.62\\ 
 \midrule
 ~~~~~~~~\textit{Our implementation}  & 0.57 & 0.57 & 0.57 & 0.57 \\ 
 ~~~~~~~~~~~~w/out negation & 0.58 & 0.58 & 0.58 & 0.58 \\
@@ -26,13 +27,13 @@ Model & acc. & prec. & rec. & F1 \\
 ~~~~~~~~~~~~~~~~Important  & 0.67 & 0.67 & 0.67 & 0.67 \\  
 ~~~~~~~~~~~~~~~~Unimportant  & 0.80 & 0.82 & 0.80 & 0.80 \\  
 \midrule
-~~~~W/ affir. intp. by T5-Chat \\
+~~~~W/ affir. intp. by T5-Chat \nottuned\\
 ~~~~~~~~w/out negation \\ 
 ~~~~~~~~w negation \\ 
 ~~~~~~~~~~~~~~~~Important \\ 
 ~~~~~~~~~~~~~~~~Unimportant \\ 
 \midrule
-~~~~W/ affir. intp. by T5-Mosharaf \\
+~~~~W/ affir. intp. by T5-Mosharaf \nottuned\\
 ~~~~~~~~w/out negation \\ 
 ~~~~~~~~w negation \\ 
 ~~~~~~~~~~~~~~~~Important \\ 
