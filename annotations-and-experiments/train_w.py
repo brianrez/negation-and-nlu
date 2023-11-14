@@ -157,10 +157,10 @@ def run(task, model, setting, lr=None, batch_size=None):
 # settings: "ch", "or", "mo"
 if __name__ == "__main__":
     exp_ids = [
-        ["wsc", "roberta-large", "mo", "5e-6"],
-        ["wsc", "roberta-large", "mo", "1e-5"],
-        ["wsc", "roberta-large", "mo", "5e-5"],
-        ["wsc", "roberta-large", "mo", "1e-4"],
+        ["wsc", "roberta-large", "ch", "5e-6"],
+        ["wsc", "roberta-large", "ch", "1e-5"],
+        ["wsc", "roberta-large", "ch", "5e-5"],
+        ["wsc", "roberta-large", "ch", "1e-4"],
     ]
 
     for exp_id in exp_ids:
@@ -169,7 +169,7 @@ if __name__ == "__main__":
         try:
             task, model, setting, lr = exp_id
             move_files(task, setting)
-            run(task, model, setting)
+            run(task, model, setting, lr)
             dones.write(str(exp_id) + "\n")
 
             os.system("git add .")

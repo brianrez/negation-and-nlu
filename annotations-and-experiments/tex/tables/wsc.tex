@@ -1,0 +1,33 @@
+\begin{table*}
+\centering
+\begin{tabular}{lrrrr}
+\toprule
+&& \multicolumn{3}{c}{\textbf{Macro-Avg}} \\
+Model & acc. & prec. & rec. & F1 \\
+\midrule
+\textbf{RoBERTa-base} \\
+~~~~W/out affir. intp. \\
+~~~~~~~~\textit{Mosharaf} \\
+~~~~~~~~~~~~w/out negation \\ 
+~~~~~~~~~~~~w/ negation \\ 
+\midrule
+~~~~~~~~\textit{Our implementation} \\
+~~~~~~~~~~~~w/out negation \\
+~~~~~~~~~~~~w/ negation \\ 
+\bottomrule
+\textbf{RoBERTa-large} \\
+~~~~W/out affir. intp. \\
+~~~~~~~~w/out negation \\ 
+~~~~~~~~w negation \\ 
+\midrule
+~~~~W/ affir. intp. by T5-Chat \\
+~~~~~~~~w/out negation \\ 
+~~~~~~~~w negation \\ 
+\midrule
+~~~~W/ affir. intp. by T5-Mosharaf \\
+~~~~~~~~w/out negation \\ 
+~~~~~~~~w negation \\ 
+\bottomrule
+\end{tabular}
+\caption{Results on WSC.}
+\end{table*}
