@@ -1,0 +1,2 @@
+{"score": 0.7019230769230769, "metrics": {"wsc": {"major": 0.7019230769230769, "minor": {"acc": 0.7019230769230769}}}, "train_state": {"global_steps": 7000, "task_steps": {"wsc": 7000}}, "TIMESTAMP": 1699995726.4544246}
+{"score": 0.7019230769230769, "metrics": {"wsc": {"major": 0.7019230769230769, "minor": {"acc": 0.7019230769230769}}}, "train_state": {"global_steps": 7000, "task_steps": {"wsc": 7000}}, "TIMESTAMP": 1699995739.3562899}
