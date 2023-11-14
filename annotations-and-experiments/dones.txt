@@ -17,3 +17,4 @@
 ['stsb', 'roberta-large', 'ch', '5e-5']
 ['stsb', 'roberta-large', 'ch', '1e-4']
 ['wsc', 'roberta-large', 'ch', '1e-5']
+['wsc', 'roberta-large', 'ch', '5e-5']
