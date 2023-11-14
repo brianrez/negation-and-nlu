@@ -67,7 +67,7 @@ class metrics:
                         self.import_neg_indices.append(i)
                     else:
                         self.not_import_neg_indices.append(i)
-                    self.neg_indices.append(i)
+                    self.neg_indices.append(int(i))
                     break
 
         assert len(self.neg_indices) == len(data), f'{len(self.neg_indices)} != {len(data)}'
@@ -121,10 +121,10 @@ class metrics:
         
         for row in data:
             if row[6] == "Yes":
-                self.import_neg_indices.append(row[1])
+                self.import_neg_indices.append(int(row[1]))
             else:
-                self.not_import_neg_indices.append(row[1])
-            self.neg_indices.append(row[1])
+                self.not_import_neg_indices.append(int(row[1]))
+            self.neg_indices.append(int(row[1]))
         self.non_neg_indices = [i for i in range(len(labels)) if i not in self.neg_indices]
 
         assert len(self.neg_indices) == len(data)
@@ -185,10 +185,10 @@ class metrics:
 
         for row in data:
             if row[8] == "Yes":
-                self.import_neg_indices.append(row[1])
+                self.import_neg_indices.append(int(row[1]))
             else:
-                self.not_import_neg_indices.append(row[1])
-            self.neg_indices.append(row[1])
+                self.not_import_neg_indices.append(int(row[1]))
+            self.neg_indices.append(int(row[1]))
 
         assert len(self.neg_indices) == len(data)
         assert len(self.import_neg_indices) + len(self.not_import_neg_indices) == len(self.neg_indices)
@@ -243,10 +243,10 @@ class metrics:
 
         for row in data:
             if row[7] == "Yes":
-                self.import_neg_indices.append(row[1])
+                self.import_neg_indices.append(int(row[1]))
             else:
-                self.not_import_neg_indices.append(row[1])
-            self.neg_indices.append(row[1])
+                self.not_import_neg_indices.append(int(row[1]))
+            self.neg_indices.append(int(row[1]))
 
         assert len(self.neg_indices) == len(data)
         assert len(self.import_neg_indices) + len(self.not_import_neg_indices) == len(self.neg_indices)
@@ -308,7 +308,7 @@ class metrics:
                 self.import_neg_indices.append(row[1])
             else:
                 self.not_import_neg_indices.append(row[1])
-            self.neg_indices.append(row[1])
+            self.neg_indices.append(int(row[1]))
 
         assert len(self.neg_indices) == len(data)
         assert len(self.import_neg_indices) + len(self.not_import_neg_indices) == len(self.neg_indices)
@@ -389,13 +389,11 @@ if __name__=="__main__":
         # ['wsc', 'large', 'ch', '1e-6'],
         # ['wsc', 'large', 'mo', '1e-6'],
 
-        ["wic", "large", "ch", "1e-6"],
-        ["wic", "large", "ch", "5e-6"],
-        ["wic", "large", "ch", "1e-5"],
-        ["wic", "large", "ch", "5e-5"],
-        ["wic", "large", "ch", "1e-4"],
-
-        
+        ["wsc", "large", "ch", "1e-6"],
+        ["wsc", "large", "ch", "5e-6"],
+        ["wsc", "large", "ch", "1e-5"],
+        ["wsc", "large", "ch", "5e-5"],
+        ["wsc", "large", "ch", "1e-4"],      
     ]
     
     for exp_id in exp_ids:

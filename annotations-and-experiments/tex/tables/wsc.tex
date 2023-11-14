@@ -14,17 +14,18 @@ Model & acc. & prec. & rec. & F1 \\
 ~~~~~~~~~~~~w/ negation &&&&0.59\\ 
 \midrule
 ~~~~~~~~\textit{Our implementation}  & 0.60 & 0.58 & 0.58 & 0.58\\
-~~~~~~~~~~~~w/out negation  & 0.60 & 0.58 & 0.58 & 0.58\\
+~~~~~~~~~~~~w/out negation   & 0.54 & 0.49 & 0.49 & 0.49 \\
 ~~~~~~~~~~~~w/ negation & 0.65 & 0.65 & 0.66 & 0.65 \\ 
 \bottomrule
 \textbf{RoBERTa-large} \\
 ~~~~W/out affir. intp.  & 0.69 & 0.72 & 0.73 & 0.69\\
-~~~~~~~~w/out negation  & 0.69 & 0.72 & 0.73 & 0.69\\ 
+~~~~~~~~w/out negation  & 0.67 & 0.69 & 0.71 & 0.67\\ 
 ~~~~~~~~w negation  & 0.71 & 0.74 & 0.75 & 0.71\\ 
 \midrule
-~~~~W/ affir. intp. by T5-Chat \nottuned\\
-~~~~~~~~w/out negation \\ 
-~~~~~~~~w negation \\ 
+% ['wsc', 'large', 'ch', '5e-6']
+~~~~W/ affir. intp. by T5-Chat & 0.72 & 0.71 & 0.73 & 0.71 \\
+~~~~~~~~w/out negation    & 0.69 & 0.68 & 0.70 & 0.68 \\ 
+~~~~~~~~w negation  & 0.75 & 0.75 & 0.76 & 0.75 \\ 
 \midrule
 ~~~~W/ affir. intp. by T5-Mosharaf \nottuned \\
 ~~~~~~~~w/out negation \\ 
