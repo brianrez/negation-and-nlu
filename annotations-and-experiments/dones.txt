@@ -12,3 +12,4 @@
 ['wsc', 'roberta-large', 'ch']
 ['wsc', 'roberta-large', 'mo']
 ['stsb', 'roberta-large', 'ch', '1e-6']
+['stsb', 'roberta-large', 'ch', '5e-6']
