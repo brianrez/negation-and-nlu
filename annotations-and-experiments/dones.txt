@@ -19,3 +19,4 @@
 ['wsc', 'roberta-large', 'ch', '1e-5']
 ['wsc', 'roberta-large', 'ch', '5e-5']
 ['qnli', 'roberta-large', 'ch', '1e-6']
+['commonsenseqa', 'roberta-large', 'ch', '1e-6']
