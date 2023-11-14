@@ -159,7 +159,7 @@ if __name__ == "__main__":
         # ["stsb", "roberta-large", "or"],
         # ["wic",  "roberta-large", "or"],
         # ["commonsenseqa", "roberta-large", "ch"],
-        ["wsc",           "roberta-large", "ch"],
+        # ["wsc",           "roberta-large", "ch"],
         ["wsc", "roberta-large", "mo"],
         # ["wic",           "roberta-large", "ch"],
         # ["stsb",          "roberta-large", "ch"],
