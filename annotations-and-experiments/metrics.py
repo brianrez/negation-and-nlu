@@ -71,6 +71,7 @@ class metrics:
                     break
 
         assert len(self.neg_indices) == len(data), f'{len(self.neg_indices)} != {len(data)}'
+        assert len(self.import_neg_indices) + len(self.not_import_neg_indices) == len(self.neg_indices)
 
         def index_to_metrics(indices, setting):
             new_labels = []
@@ -88,10 +89,10 @@ class metrics:
 
         self.tex_results += "% \all data\n"
         self.tex_results += index_to_metrics([i for i in range(len(labels))], 'all')
-        self.tex_results += "% \w/ negation\n"
-        self.tex_results += index_to_metrics(self.neg_indices, 'W/ negation')
         self.tex_results += "% \w/o negation\n"
         self.tex_results += index_to_metrics(self.non_neg_indices, 'W/O negation')
+        self.tex_results += "% \w/ negation\n"
+        self.tex_results += index_to_metrics(self.neg_indices, 'W/ negation')
         if len(self.import_neg_indices) > 0:
             self.tex_results += "% \w/ negation and important\n"
             self.tex_results += index_to_metrics(self.import_neg_indices, 'W/ negation and important')
@@ -127,6 +128,8 @@ class metrics:
         self.non_neg_indices = [i for i in range(len(labels)) if i not in self.neg_indices]
 
         assert len(self.neg_indices) == len(data)
+        assert len(self.import_neg_indices) + len(self.not_import_neg_indices) == len(self.neg_indices)
+
 
 
         def index_to_metrics(indices, setting):
@@ -147,10 +150,10 @@ class metrics:
 
         self.tex_results += "% \all data\n"
         self.tex_results += index_to_metrics([i for i in range(len(labels))], 'all')
-        self.tex_results += "% \w/ negation\n"
-        self.tex_results += index_to_metrics(self.neg_indices, 'W/ negation')
         self.tex_results += "% \w/o negation\n"
         self.tex_results += index_to_metrics(self.non_neg_indices, 'W/O negation')
+        self.tex_results += "% \w/ negation\n"
+        self.tex_results += index_to_metrics(self.neg_indices, 'W/ negation')
         if len(self.import_neg_indices) > 0:
             self.tex_results += "% \w/ negation and important\n"
             self.tex_results += index_to_metrics(self.import_neg_indices, 'W/ negation and important')
@@ -188,6 +191,8 @@ class metrics:
             self.neg_indices.append(row[1])
 
         assert len(self.neg_indices) == len(data)
+        assert len(self.import_neg_indices) + len(self.not_import_neg_indices) == len(self.neg_indices)
+
 
         def index_to_metrics(indices, setting):
             new_labels = []
@@ -205,10 +210,10 @@ class metrics:
 
         self.tex_results += "% \all data\n"
         self.tex_results += index_to_metrics([i for i in range(len(labels))], 'all')
-        self.tex_results += "% \w/ negation\n"
-        self.tex_results += index_to_metrics(self.neg_indices, 'W/ negation')
         self.tex_results += "% \w/o negation\n"
         self.tex_results += index_to_metrics(self.non_neg_indices, 'W/O negation')
+        self.tex_results += "% \w/ negation\n"
+        self.tex_results += index_to_metrics(self.neg_indices, 'W/ negation')
         if len(self.import_neg_indices) > 0:
             self.tex_results += "% \w/ negation and important\n"
             self.tex_results += index_to_metrics(self.import_neg_indices, 'W/ negation and important')
@@ -244,6 +249,8 @@ class metrics:
             self.neg_indices.append(row[1])
 
         assert len(self.neg_indices) == len(data)
+        assert len(self.import_neg_indices) + len(self.not_import_neg_indices) == len(self.neg_indices)
+
 
         def index_to_metrics(indices, setting):
             new_labels = []
@@ -262,10 +269,10 @@ class metrics:
 
         self.tex_results += "% \all data\n"
         self.tex_results += index_to_metrics([i for i in range(len(labels))], 'all')
-        self.tex_results += "% \w/ negation\n"
-        self.tex_results += index_to_metrics(self.neg_indices, 'W/ negation')
         self.tex_results += "% \w/o negation\n"
         self.tex_results += index_to_metrics(self.non_neg_indices, 'W/O negation')
+        self.tex_results += "% \w/ negation\n"
+        self.tex_results += index_to_metrics(self.neg_indices, 'W/ negation')
         if len(self.import_neg_indices) > 0:
             self.tex_results += "% \w/ negation and important\n"
             self.tex_results += index_to_metrics(self.import_neg_indices, 'W/ negation and important')
@@ -304,6 +311,8 @@ class metrics:
             self.neg_indices.append(row[1])
 
         assert len(self.neg_indices) == len(data)
+        assert len(self.import_neg_indices) + len(self.not_import_neg_indices) == len(self.neg_indices)
+
 
         def index_to_metrics(indices, setting):
             new_labels = []
@@ -323,13 +332,15 @@ class metrics:
         self.tex_results += f' & {a:.2f} & {b:.2f} & \\\\ \n'
 
 
-        self.tex_results += "% \w/ negation\n"
-        a, b = index_to_metrics(self.neg_indices, 'W/ negation')
-        self.tex_results += f' & {a:.2f} & {b:.2f} & \\\\ \n'
 
         self.tex_results += "% \w/o negation\n"
         a, b = index_to_metrics(self.non_neg_indices, 'W/O negation')
         self.tex_results += f' & {a:.2f} & {b:.2f} & \\\\ \n'
+
+        self.tex_results += "% \w/ negation\n"
+        a, b = index_to_metrics(self.neg_indices, 'W/ negation')
+        self.tex_results += f' & {a:.2f} & {b:.2f} & \\\\ \n'
+
         if len(self.import_neg_indices) > 0:
             self.tex_results += "% \w/ negation and important\n"
             a, b = index_to_metrics(self.import_neg_indices, 'W/ negation and important')
@@ -346,35 +357,35 @@ def clas_rep_to_tex(dic):
     tex_str += f"{dic['accuracy']:.2f} & "
     tex_str += f"{dic['macro avg']['precision']:.2f} & "
     tex_str += f"{dic['macro avg']['recall']:.2f} & "
-    tex_str += f"{dic['macro avg']['f1-score']:.2f} & "
+    tex_str += f"{dic['macro avg']['f1-score']:.2f} "
     tex_str += "\\\\ \n"
     return tex_str
 
 
 if __name__=="__main__":
     exp_ids = [
-        # ['commonsenseqa', 'base', 'or', '1e-5'],
-        # ['commonsenseqa', 'large', 'or', '1e-5'],
+        ['commonsenseqa', 'base', 'or', '1e-5'],
+        ['commonsenseqa', 'large', 'or', '1e-5'],
         # ['commonsenseqa', 'large', 'ch', '1e-5'],
         # ['commonsenseqa', 'large', 'mo', '1e-5'],
 
-        # ['qnli', 'base', 'or', '1e-5'],
-        # ['qnli', 'large', 'or', '1e-5'],
+        ['qnli', 'base', 'or', '1e-5'],
+        ['qnli', 'large', 'or', '1e-5'],
         # ['qnli', 'large', 'ch', '1e-5'],
         # ['qnli', 'large', 'mo', '1e-5'],
  
-        # ['stsb', 'base', 'or', '1e-5'],
-        # ['stsb', 'large', 'or', '1e-5'],
+        ['stsb', 'base', 'or', '1e-5'],
+        ['stsb', 'large', 'or', '1e-5'],
         # ['stsb', 'large', 'ch', '1e-5'],
         # ['stsb', 'large', 'mo', '1e-5'],
 
-        # ['wic', 'base',  'or',  '1e-5'],
-        # ['wic', 'large', 'or', '1e-5'],
+        ['wic', 'base',  'or',  '1e-5'],
+        ['wic', 'large', 'or', '1e-5'],
         # ['wic', 'large', 'ch', '1e-5'],
-        #['wic', 'large', 'mo', '1e-5'],
+        # ['wic', 'large', 'mo', '1e-5'],
 
-        # ['wsc', 'base', 'or',  '1e-6'],
-        # ['wsc', 'large', 'or', '1e-6'],
+        ['wsc', 'base', 'or',  '1e-6'],
+        ['wsc', 'large', 'or', '1e-6'],
         # ['wsc', 'large', 'ch', '1e-6'],
         # ['wsc', 'large', 'mo', '1e-6'],
 
@@ -382,22 +393,25 @@ if __name__=="__main__":
     ]
     
     for exp_id in exp_ids:
-        task, model, setting, lr = exp_id
-        print(exp_id)
-        m = metrics(task, model, setting, lr)
-        m.read_pred_data()
-        if task == 'commonsenseqa':
-            m.commonsenseqa()
-        elif task == 'wsc':
-            m.wsc()
-        elif task == 'wic':
-            m.wic()
-        elif task == 'qnli':
-            m.qnli()
-        elif task == 'stsb':
-            m.stsb()
-        m.write_to_text()
-        m.write_to_tex()
-        
+        try:
+            task, model, setting, lr = exp_id
+            print(exp_id)
+            m = metrics(task, model, setting, lr)
+            m.read_pred_data()
+            if task == 'commonsenseqa':
+                m.commonsenseqa()
+            elif task == 'wsc':
+                m.wsc()
+            elif task == 'wic':
+                m.wic()
+            elif task == 'qnli':
+                m.qnli()
+            elif task == 'stsb':
+                m.stsb()
+            m.write_to_text()
+            m.write_to_tex()
+        except:
+            print('error')
+            pass
 
 
