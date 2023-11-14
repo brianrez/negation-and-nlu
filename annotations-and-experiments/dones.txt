@@ -29,3 +29,4 @@
 ['stsb', 'roberta-large', 'mo', '1e-6']
 ['wsc', 'roberta-large', 'mo', '5e-6']
 ['stsb', 'roberta-large', 'mo', '5e-6']
+['stsb', 'roberta-large', 'mo', '5e-5']
