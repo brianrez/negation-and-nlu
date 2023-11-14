@@ -1,7 +1,7 @@
 import torch
-with open('val_preds.p', 'rb') as f:
+with open('./preds/commonsenseqa/ch_large_1e-5.pt', 'rb') as f:
     # predictions = pickle.load(f)
-    preds = torch.load('val_preds.p')
+    preds = torch.load(f)
 
 print(preds)
 print(len(preds['commonsenseqa']['preds']))
@@ -9,7 +9,7 @@ print(len(preds['commonsenseqa']['preds']))
 import json
 from sklearn.metrics import classification_report, accuracy_score
 val = []
-with open('../../content/exp/tasks/data/commonsenseqa/val.jsonl') as f:
+with open('./data/commonsenseqa/ch/val.jsonl') as f:
     for line in f:
         data = json.loads(line)
         val.append(data)
@@ -25,7 +25,7 @@ import csv
 
 data = []
 # Replace 'file_path.tsv' with your TSV file's path
-with open('../../annotations/important-unimportant/commonsenseqa.tsv', 'r', newline='') as file:
+with open('./annotations/important-unimportant/commonsenseqa.tsv', 'r', newline='') as file:
     reader = csv.reader(file, delimiter='\t')
     for row in reader:
         data.append(row)
@@ -39,7 +39,7 @@ for i in range(len(val)):
             indices.append(i)
             break
 
-assert len(indices) == len(data)
+assert len(indices) == len(data), f'{len(indices)} != {len(data)}'
 
 
 new_labels = []
