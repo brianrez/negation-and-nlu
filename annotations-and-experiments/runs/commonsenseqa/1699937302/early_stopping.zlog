@@ -1,0 +1,2 @@
+{"num_evals_since_improvement": 0, "train_state": {"global_steps": 6090, "task_steps": {"commonsenseqa": 6090}}, "TIMESTAMP": 1699948323.6087537}
+{"num_evals_since_improvement": 1, "train_state": {"global_steps": 6090, "task_steps": {"commonsenseqa": 6090}}, "TIMESTAMP": 1699948347.1229703}

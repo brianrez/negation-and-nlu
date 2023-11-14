@@ -1,0 +1,2 @@
+{"num_evals_since_improvement": 0, "train_state": {"global_steps": 3600, "task_steps": {"stsb": 3600}}, "TIMESTAMP": 1699940283.6057043}
+{"num_evals_since_improvement": 1, "train_state": {"global_steps": 3600, "task_steps": {"stsb": 3600}}, "TIMESTAMP": 1699940292.8426466}
