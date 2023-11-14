@@ -11,3 +11,4 @@
 ['qnli', 'roberta-large', 'ch']
 ['wsc', 'roberta-large', 'ch']
 ['wsc', 'roberta-large', 'mo']
+['stsb', 'roberta-large', 'ch', '1e-6']
