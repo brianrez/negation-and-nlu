@@ -169,7 +169,7 @@ if __name__ == "__main__":
         try:
             task, model, setting, lr = exp_id
             move_files(task, setting)
-            run(task, model, setting ,r)
+            run(task, model, setting ,lr)
             dones.write(str(exp_id) + "\n")
 
             os.system("git add .")
