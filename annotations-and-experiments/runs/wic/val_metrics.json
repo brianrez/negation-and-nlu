@@ -1,7 +1,7 @@
 {
   "aggregated": 0.5,
   "wic": {
-    "loss": 0.6931473955512046,
+    "loss": 0.6931500688195229,
     "metrics": {
       "major": 0.5,
       "minor": {
