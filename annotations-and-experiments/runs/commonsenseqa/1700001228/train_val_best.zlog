@@ -1,0 +1,1 @@
+{"score": 0.696, "metrics": {"commonsenseqa": {"major": 0.696, "minor": {"acc": 0.696}}}, "train_state": {"global_steps": 6090, "task_steps": {"commonsenseqa": 6090}}, "TIMESTAMP": 1700012256.4101954}
