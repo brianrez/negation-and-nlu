@@ -1,5 +1,5 @@
-All data: 0.7125307125307125
-All data:               precision    recall  f1-score   support
+all: 0.7125307125307125
+all:               precision    recall  f1-score   support
 
            0       0.74      0.73      0.73       239
            1       0.71      0.67      0.69       255
@@ -10,19 +10,6 @@ All data:               precision    recall  f1-score   support
     accuracy                           0.71      1221
    macro avg       0.71      0.71      0.71      1221
 weighted avg       0.71      0.71      0.71      1221
-
-W/ negation: 0.7010869565217391
-W/ negation:               precision    recall  f1-score   support
-
-           0       0.68      0.75      0.71        40
-           1       0.66      0.62      0.64        37
-           2       0.81      0.75      0.78        40
-           3       0.69      0.76      0.72        33
-           4       0.66      0.62      0.64        34
-
-    accuracy                           0.70       184
-   macro avg       0.70      0.70      0.70       184
-weighted avg       0.70      0.70      0.70       184
 
 W/O negation: 0.7145612343297975
 W/O negation:               precision    recall  f1-score   support
@@ -36,6 +23,19 @@ W/O negation:               precision    recall  f1-score   support
     accuracy                           0.71      1037
    macro avg       0.71      0.71      0.71      1037
 weighted avg       0.71      0.71      0.71      1037
+
+W/ negation: 0.7010869565217391
+W/ negation:               precision    recall  f1-score   support
+
+           0       0.68      0.75      0.71        40
+           1       0.66      0.62      0.64        37
+           2       0.81      0.75      0.78        40
+           3       0.69      0.76      0.72        33
+           4       0.66      0.62      0.64        34
+
+    accuracy                           0.70       184
+   macro avg       0.70      0.70      0.70       184
+weighted avg       0.70      0.70      0.70       184
 
 W/ negation and important: 0.6310679611650486
 W/ negation and important:               precision    recall  f1-score   support

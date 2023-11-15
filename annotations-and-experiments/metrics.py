@@ -312,7 +312,7 @@ class metrics:
 
         assert len(self.neg_indices) == len(data)
         assert len(self.import_neg_indices) + len(self.not_import_neg_indices) == len(self.neg_indices)
-
+        print(len(self.import_neg_indices))
 
         def index_to_metrics(indices, setting):
             new_labels = []
@@ -389,11 +389,11 @@ if __name__=="__main__":
         # ['wsc', 'large', 'ch', '1e-6'],
         # ['wsc', 'large', 'mo', '1e-6'],
 
-        ["wsc", "large", "ch", "1e-6"],
-        ["wsc", "large", "ch", "5e-6"],
-        ["wsc", "large", "ch", "1e-5"],
-        ["wsc", "large", "ch", "5e-5"],
-        ["wsc", "large", "ch", "1e-4"],      
+        ["stsb", "large", "ch", "1e-6"],
+        ["stsb", "large", "ch", "5e-6"],
+        ["stsb", "large", "ch", "1e-5"],
+        ["stsb", "large", "ch", "5e-5"],
+        ["stsb", "large", "ch", "1e-4"],      
     ]
     
     for exp_id in exp_ids:
