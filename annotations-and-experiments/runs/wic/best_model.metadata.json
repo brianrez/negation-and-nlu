@@ -1,11 +1,11 @@
 {
   "val_state": {
-    "score": 0.688,
+    "score": 0.744,
     "metrics": {
       "wic": {
-        "major": 0.688,
+        "major": 0.744,
         "minor": {
-          "acc": 0.688
+          "acc": 0.744
         }
       }
     },
@@ -18,9 +18,9 @@
   },
   "val_metrics": {
     "wic": {
-      "major": 0.688,
+      "major": 0.744,
       "minor": {
-        "acc": 0.688
+        "acc": 0.744
       }
     }
   }

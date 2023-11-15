@@ -1,0 +1,2 @@
+{"score": 0.744, "metrics": {"wic": {"major": 0.744, "minor": {"acc": 0.744}}}, "train_state": {"global_steps": 3400, "task_steps": {"wic": 3400}}, "TIMESTAMP": 1700029559.1279871}
+{"score": 0.744, "metrics": {"wic": {"major": 0.744, "minor": {"acc": 0.744}}}, "train_state": {"global_steps": 3400, "task_steps": {"wic": 3400}}, "TIMESTAMP": 1700029573.6984468}
