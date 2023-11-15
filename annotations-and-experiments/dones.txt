@@ -65,3 +65,4 @@
 ['qnli', 'roberta-large', 'ch', '1e-4']
 ['wic', 'roberta-large', 'ch', '5e-6']
 ['wic', 'roberta-large', 'ch', '5e-5']
+['wic', 'roberta-large', 'ch', '1e-4']
