@@ -70,3 +70,4 @@
 ['qnli', 'roberta-large', 'mo', '5e-5']
 ['commonsenseqa', 'roberta-large', 'ch', '1e-4']
 ['commonsenseqa', 'roberta-large', 'mo', '1e-6']
+['qnli', 'roberta-large', 'mo', '5e-6']
