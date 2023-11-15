@@ -19,7 +19,7 @@
   "keep_checkpoint_when_done": false,
   "force_overwrite": true,
   "seed": 44,
-  "learning_rate": 1e-06,
+  "learning_rate": 0.0001,
   "adam_epsilon": 1e-08,
   "max_grad_norm": 1.0,
   "optimizer_type": "adam",
