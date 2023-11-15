@@ -1,0 +1,2 @@
+{"num_evals_since_improvement": 0, "train_state": {"global_steps": 3400, "task_steps": {"wic": 3400}}, "TIMESTAMP": 1700032382.7497106}
+{"num_evals_since_improvement": 1, "train_state": {"global_steps": 3400, "task_steps": {"wic": 3400}}, "TIMESTAMP": 1700032391.7449048}
