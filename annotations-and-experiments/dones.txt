@@ -60,3 +60,4 @@
 ['commonsenseqa', 'roberta-large', 'ch', '5e-5']
 ['wic', 'roberta-large', 'mo', '5e-6']
 ['wic', 'roberta-large', 'mo', '5e-5']
+['wic', 'roberta-large', 'mo', '1e-4']
