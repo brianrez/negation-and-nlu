@@ -79,3 +79,21 @@ name 'r' is not defined
 ['qnli', 'roberta-large', 'ch', '5e-5']
 '<' not supported between instances of 'str' and 'float'
 --------------------------------------------------
+['qnli', 'roberta-large', 'mo', '1e-6']
+[Errno 2] No such file or directory: './models/roberta-large/model/roberta-large.p'
+--------------------------------------------------
+['commonsenseqa', 'roberta-large', 'ch', '1e-4']
+[Errno 2] No such file or directory: './models/roberta-large/model/roberta-large.p'
+--------------------------------------------------
+['commonsenseqa', 'roberta-large', 'mo', '5e-5']
+[Errno 2] No such file or directory: './models/roberta-large/model/roberta-large.p'
+--------------------------------------------------
+['commonsenseqa', 'roberta-large', 'mo', '1e-6']
+[Errno 2] No such file or directory: './models/roberta-large/model/roberta-large.p'
+--------------------------------------------------
+['commonsenseqa', 'roberta-large', 'mo', '1e-4']
+[Errno 2] No such file or directory: './models/roberta-large/model/roberta-large.p'
+--------------------------------------------------
+['commonsenseqa', 'roberta-large', 'ch', '1e-4']
+PytorchStreamReader failed reading zip archive: failed finding central directory
+--------------------------------------------------

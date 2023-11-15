@@ -1,0 +1,5 @@
+{"task": "commonsenseqa", "task_step": 1, "global_step": 1, "loss_val": 1.631070852279663, "TIMESTAMP": 1700071370.5222478}
+{"task": "commonsenseqa", "task_step": 2, "global_step": 2, "loss_val": 1.596362590789795, "TIMESTAMP": 1700071372.331908}
+{"task": "commonsenseqa", "task_step": 3, "global_step": 3, "loss_val": 1.6104037761688232, "TIMESTAMP": 1700071374.1465435}
+{"task": "commonsenseqa", "task_step": 4, "global_step": 4, "loss_val": 1.5973774194717407, "TIMESTAMP": 1700071375.9599493}
+{"task": "commonsenseqa", "task_step": 5, "global_step": 5, "loss_val": 1.6537227630615234, "TIMESTAMP": 1700071377.773827}
