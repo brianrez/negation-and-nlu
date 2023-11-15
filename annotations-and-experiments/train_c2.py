@@ -159,8 +159,6 @@ if __name__ == "__main__":
     exp_ids = [
         ["commonsenseqa", "roberta-large", "mo", "1e-6"],
         ["commonsenseqa", "roberta-large", "mo", "5e-6"],
-        ["commonsenseqa", "roberta-large", "mo", "5e-5"],
-        ["commonsenseqa", "roberta-large", "mo", "1e-4"],
     ]
 
     for exp_id in exp_ids:

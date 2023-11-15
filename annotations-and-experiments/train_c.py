@@ -157,10 +157,12 @@ def run(task, model, setting, lr=None, batch_size=None):
 # settings: "ch", "or", "mo"
 if __name__ == "__main__":
     exp_ids = [
-        ["commonsenseqa", "roberta-large", "ch", "1e-6"],
-        ["commonsenseqa", "roberta-large", "ch", "5e-6"],
-        ["commonsenseqa", "roberta-large", "ch", "5e-5"],
+        # ["commonsenseqa", "roberta-large", "ch", "1e-6"],
+        # ["commonsenseqa", "roberta-large", "ch", "5e-6"],
+        # ["commonsenseqa", "roberta-large", "ch", "5e-5"],
         ["commonsenseqa", "roberta-large", "ch", "1e-4"],
+        ["commonsenseqa", "roberta-large", "mo", "5e-5"],
+        ["commonsenseqa", "roberta-large", "mo", "1e-4"],
     ]
 
     for exp_id in exp_ids:
