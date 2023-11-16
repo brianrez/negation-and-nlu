@@ -103,8 +103,8 @@ def run(task, model, setting, lr=None, batch_size=None):
         task_cache_base_path="./outputs",
         train_task_name_list=[TASK_NAME],
         val_task_name_list=[TASK_NAME],
-        train_batch_size=params["train_batch_size"],
-        eval_batch_size=params["eval_batch_size"],
+        train_batch_size=int(params["train_batch_size"]),
+        eval_batch_size=int(params["eval_batch_size"]),
         epochs=params["num_epochs"],
         num_gpus=params["num_gpus"],
         # warmup_steps_proportion=params["warmup_steps_proportion"]
@@ -157,24 +157,20 @@ def run(task, model, setting, lr=None, batch_size=None):
 # settings: "ch", "or", "mo"
 if __name__ == "__main__":
     exp_ids = [
-        ["wic", "roberta-large", "mo", "1e-6"],
-        ["wic", "roberta-large", "mo", "5e-6"],
-        ["wic", "roberta-large", "mo", "5e-5"],
-        ["wic", "roberta-large", "mo", "1e-4"],
-
-        ["wic", "roberta-large", "ch", "1e-6"],
-        ["wic", "roberta-large", "ch", "5e-6"],
-        ["wic", "roberta-large", "ch", "5e-5"],
-        ["wic", "roberta-large", "ch", "1e-4"],
+        ["wsc", "roberta-large", "mo", "1e-6", 8],
+        ["wsc", "roberta-large", "mo", "5e-6", 8],
+        ["wsc", "roberta-large", "mo", "1e-5", 8],
+        ["wsc", "roberta-large", "mo", "5e-5", 8],
+        ["wsc", "roberta-large", "mo", "1e-4", 8],
     ]
 
     for exp_id in exp_ids:
         errors = open("errors.txt", "a")
         dones = open("dones.txt", "a")
         try:
-            task, model, setting, lr = exp_id
+            task, model, setting, lr, bs = exp_id
             move_files(task, setting)
-            run(task, model, setting, lr)
+            run(task, model, setting, lr, bs)
             dones.write(str(exp_id) + "\n")
 
             os.system("git add .")
