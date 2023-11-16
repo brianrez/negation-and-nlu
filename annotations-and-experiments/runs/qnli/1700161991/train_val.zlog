@@ -1,0 +1,2 @@
+{"score": 0.914, "metrics": {"qnli": {"major": 0.914, "minor": {"acc": 0.914}}}, "train_state": {"global_steps": 19641, "task_steps": {"qnli": 19641}}, "TIMESTAMP": 1700169968.5883348}
+{"score": 0.914, "metrics": {"qnli": {"major": 0.914, "minor": {"acc": 0.914}}}, "train_state": {"global_steps": 19641, "task_steps": {"qnli": 19641}}, "TIMESTAMP": 1700169983.5260122}
