@@ -389,11 +389,11 @@ if __name__=="__main__":
         # ['wsc', 'large', 'ch', '1e-6'],
         # ['wsc', 'large', 'mo', '1e-6'],
 
-        ["stsb", "large", "ch", "1e-6"],
-        ["stsb", "large", "ch", "5e-6"],
-        ["stsb", "large", "ch", "1e-5"],
-        ["stsb", "large", "ch", "5e-5"],
-        ["stsb", "large", "ch", "1e-4"],      
+        ["wic", "large", "ch", "1e-6"],
+        ["wic", "large", "ch", "5e-6"],
+        ["wic", "large", "ch", "1e-5"],
+        ["wic", "large", "ch", "5e-5"],
+        ["wic", "large", "ch", "1e-4"],      
     ]
     
     for exp_id in exp_ids:

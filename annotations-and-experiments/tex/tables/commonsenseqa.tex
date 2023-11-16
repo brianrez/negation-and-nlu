@@ -27,18 +27,19 @@ Model & acc. & prec. & rec. & F1 \\
 ~~~~~~~~~~~~~~~~Important  & 0.67 & 0.67 & 0.67 & 0.67 \\  
 ~~~~~~~~~~~~~~~~Unimportant  & 0.80 & 0.82 & 0.80 & 0.80 \\  
 \midrule
-~~~~W/ affir. intp. by T5-Chat \nottuned & 0.71 & 0.71 & 0.71 & 0.71 \\
-~~~~~~~~w/out negation & 0.71 & 0.71 & 0.71 & 0.71\\ 
-~~~~~~~~w negation & 0.70 & 0.70 & 0.70 & 0.70\\ 
-~~~~~~~~~~~~~~~~Important & 0.63 & 0.63 & 0.63 & 0.63 \\ 
-~~~~~~~~~~~~~~~~Unimportant & 0.79 & 0.79 & 0.79 & 0.79 \\ 
+% ['commonsenseqa', 'large', 'ch', '5e-6']
+~~~~W/ affir. intp. by T5-Chat & 0.71 & 0.71 & 0.71 & 0.71 \\
+~~~~~~~~w/out negation & 0.71 & 0.71 & 0.71 & 0.71 \\ 
+~~~~~~~~w negation  & 0.74 & 0.75 & 0.74 & 0.74 \\
+~~~~~~~~~~~~~~~~Important & 0.69 & 0.70 & 0.69 & 0.69 \\
+~~~~~~~~~~~~~~~~Unimportant  & 0.80 & 0.81 & 0.80 & 0.80 \\ 
 \midrule
-% current is terrible, should be tuned definitely!
-~~~~W/ affir. intp. by T5-Mosharaf \nottuned\\
-~~~~~~~~w/out negation \\ 
-~~~~~~~~w negation \\ 
-~~~~~~~~~~~~~~~~Important \\ 
-~~~~~~~~~~~~~~~~Unimportant \\ 
+% ['commonsenseqa', 'large', 'mo', '5e-6']
+~~~~W/ affir. intp. by T5-Mosharaf & 0.72 & 0.72 & 0.72 & 0.72 \\
+~~~~~~~~w/out negation & 0.72 & 0.72 & 0.72 & 0.72 \\ 
+~~~~~~~~w negation & 0.74 & 0.74 & 0.74 & 0.74 \\ 
+~~~~~~~~~~~~~~~~Important & 0.70 & 0.71 & 0.70 & 0.70\\ 
+~~~~~~~~~~~~~~~~Unimportant & 0.79 & 0.80 & 0.80 & 0.80\\ 
 \bottomrule
 \end{tabular}
 \caption{Results on CommonSenseQA.}
