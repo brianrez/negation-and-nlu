@@ -1,11 +1,11 @@
 {
   "val_state": {
-    "score": 0.936,
+    "score": 0.942,
     "metrics": {
       "qnli": {
-        "major": 0.936,
+        "major": 0.942,
         "minor": {
-          "acc": 0.936
+          "acc": 0.942
         }
       }
     },
@@ -18,9 +18,9 @@
   },
   "val_metrics": {
     "qnli": {
-      "major": 0.936,
+      "major": 0.942,
       "minor": {
-        "acc": 0.936
+        "acc": 0.942
       }
     }
   }
