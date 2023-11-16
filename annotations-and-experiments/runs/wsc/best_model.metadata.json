@@ -10,9 +10,9 @@
       }
     },
     "train_state": {
-      "global_steps": 7000,
+      "global_steps": 14000,
       "task_steps": {
-        "wsc": 7000
+        "wsc": 14000
       }
     }
   },
