@@ -1,0 +1,1 @@
+{"score": 0.9501799172463172, "metrics": {"stsb": {"major": 0.9501799172463172, "minor": {"pearson": 0.952213286441136, "spearmanr": 0.9481465480514986, "corr": 0.9501799172463172}}}, "train_state": {"global_steps": 7190, "task_steps": {"stsb": 7190}}, "TIMESTAMP": 1700167123.2789588}
