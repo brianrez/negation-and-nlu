@@ -97,3 +97,6 @@ name 'r' is not defined
 ['commonsenseqa', 'roberta-large', 'ch', '1e-4']
 PytorchStreamReader failed reading zip archive: failed finding central directory
 --------------------------------------------------
+['qnli', 'roberta-large', 'mo', '5e-5']
+Ran out of input
+--------------------------------------------------
