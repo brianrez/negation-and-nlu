@@ -94,3 +94,4 @@
 ['qnli', 'roberta-large', 'mo', '5e-6', 16]
 ['wsc', 'roberta-large', 'mo', '1e-4', 8]
 ['stsb', 'roberta-large', 'mo', '1e-4', 8]
+['qnli', 'roberta-large', 'ch', '1e-5', 16]
