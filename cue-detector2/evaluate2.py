@@ -192,10 +192,10 @@ def runInBatch(all_sentences, batch_size=8):
         modelCalled += 1
         negated, cues = negCues(paraphrases)
 
-        for paraphrase in paraphrases:
+        for par in paraphrases:
             for neg in negations:
-                if neg in paraphrase:
-                    print(f"Found negation: {neg} in {paraphrase}")
+                if neg in par:
+                    print(f"Found negation: {neg} in {par}")
             
 
 
