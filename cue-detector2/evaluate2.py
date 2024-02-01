@@ -196,12 +196,12 @@ def runInBatch(all_sentences, batch_size=8):
         paraphrases = paraphrase(batchItems, bad_words_ids=bad_words_ids)
         modelCalled += 1
         negated, cues = negCues(paraphrases)
-
+        '''
         for par in paraphrases:
             for neg in negations:
                 if " " + neg + " " in par:
                     print(f"Found negation: {neg} in {par}")
-            
+        '''    
 
 
         for cue in cues: 
@@ -219,7 +219,7 @@ def runInBatch(all_sentences, batch_size=8):
             m += 1
 
         if not newNeg and not newSuc:
-            print("No new negations or successful paraphrases")
+            # print("No new negations or successful paraphrases")
             for key in batch:
                 tracker[key]['paraphrased'] = True
                 tracker[key]['paraphrases'] = ["No paraphrase found"]
