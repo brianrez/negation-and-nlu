@@ -7,14 +7,15 @@ import os
 import argparse
 import json 
 import tqdm
-from transformers import (BertTokenizer, 
-                          AlbertTokenizer, 
+from transformers import (# BertTokenizer, 
+                          # AlbertTokenizer, 
                           #T5Tokenizer,
                           RobertaTokenizer,
                           AutoTokenizer,
-                          BertConfig, 
-                          AdamW,
-                          get_linear_schedule_with_warmup)
+                          # BertConfig, 
+                          # AdamW,
+                          # get_linear_schedule_with_warmup)
+                        )
 
 from module.model import DetectNeg
 from module.batch import Batchprep
@@ -76,6 +77,7 @@ model.eval()
 
 # Get the tokenizer
 tokenizer = RobertaTokenizer.from_pretrained(params["RoBERTa-base-path"], do_lower_case=False)
+# tokenizer = tokenizer(
 
 def negCues(sents):
     '''
@@ -84,6 +86,7 @@ def negCues(sents):
     '''
     dev_data = DataprepFile().preprocess(sents)
     dev_size = len(dev_data["tokens"])
+
     dev_output = []
     dev_batch_num = int(np.ceil(dev_size/params["dev_batch_size"]))
     dev_iterator = Batchprep().get_a_batch(params, vocabs, tokenizer, dev_data, dev_size, dev_batch_num, device, shuffle=False)
@@ -100,14 +103,14 @@ from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 
 device = "cuda"
 
-model = AutoModelForSeq2SeqLM.from_pretrained("humarin/chatgpt_paraphraser_on_T5_base").to(device)
-tokenizer = AutoTokenizer.from_pretrained("humarin/chatgpt_paraphraser_on_T5_base", add_prefix_space=True)
+model2 = AutoModelForSeq2SeqLM.from_pretrained("humarin/chatgpt_paraphraser_on_T5_base").to(device)
+tokenizer2 = AutoTokenizer.from_pretrained("humarin/chatgpt_paraphraser_on_T5_base", add_prefix_space=True)
 
 def get_tokens_as_list(word_list):
     "Converts a sequence of words into a list of tokens"
     tokens_list = []
     for word in word_list:
-        tokenized_word = tokenizer([word], add_special_tokens=False).input_ids[0]
+        tokenized_word = tokenizer2([word], add_special_tokens=False).input_ids[0]
         tokens_list.append(tokenized_word)
     return tokens_list
 
@@ -126,7 +129,7 @@ def paraphrase(
     bad_words_ids=None
 ):
     questions = [f"paraphrase: {question}" for question in questions]
-    input_ids = tokenizer(
+    input_ids = tokenizer2(
         questions,
         return_tensors="pt", padding="longest",
         max_length=max_length,
@@ -136,14 +139,14 @@ def paraphrase(
 
     # print(len(input_ids))
     
-    outputs = model.generate(
+    outputs = model2.generate(
         input_ids, temperature=temperature, repetition_penalty=repetition_penalty,
         num_return_sequences=num_return_sequences, no_repeat_ngram_size=no_repeat_ngram_size,
         num_beams=num_beams, num_beam_groups=num_beam_groups,
         max_length=max_length, diversity_penalty=diversity_penalty, bad_words_ids=bad_words_ids,
     )
 
-    res = tokenizer.batch_decode(outputs, skip_special_tokens=True)
+    res = tokenizer2.batch_decode(outputs, skip_special_tokens=True)
 
     return res
 
