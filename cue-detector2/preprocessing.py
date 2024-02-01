@@ -512,7 +512,7 @@ class DataprepFile():
                 sents.append(line)                                      
         return sents
         
-    def preprocess(self, sents, file_path, delim="\t"):
+    def preprocess(self, sents, delim="\t"):
         """
         Read the sentences in the file to and preprocess so that cue-detector can read the data.
         :param file_path: path to the input file
