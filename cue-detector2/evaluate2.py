@@ -168,7 +168,7 @@ def runInBatch(all_sentences, batch_size=8):
 
         for key in tracker:
             if tracker[key]['paraphrased'] == False:
-                batch[key] = tracker[key]['sentence']
+                batch[key] = tracker[key]
                 found += 1
                 if found == batch_size:
                     break
