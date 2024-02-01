@@ -151,7 +151,8 @@ def paraphrase(
     return res
 
 
-
+import pickle
+import os
 def runInBatch(all_sentences, batch_size=8):
     # create a dict
     pared = 0
@@ -210,6 +211,18 @@ def runInBatch(all_sentences, batch_size=8):
                 pared += 1
             m += 1
         print(f"Done with {pared} out of {len(all_sentences)} instances.", end='\r')
+    try:
+        # check if negation.pkl exists
+        if os.path.exists("negation.pkl"):
+            with open("negation.pkl", "rb") as file:
+                negations2 = pickle.load(file)
+            negations2 = list(set(negations2 + negations))
+        else:
+            negations2 = negations
+        with open("negation.pkl", "wb") as file:
+            pickle.dump(negations2, file)
+    except Exception as e:
+        print(e)
 
     return [tracker[key] for key in tracker]
 
