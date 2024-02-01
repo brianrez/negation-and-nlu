@@ -162,30 +162,21 @@ def runInBatch(all_sentences, batch_size=8):
         all_sentences[i]['paraphrased'] = False
         tracker[i] = all_sentences[i]
     
-    def checkIfAllParaphrased():
-        for i in range(len(all_sentences)):
-            if all_sentences[i]['paraphrased'] == False:
-                return False
-        return True
-
     def createBatch():
         batch = {}
         found = 0
 
-        for i in range(len(all_sentences)):
-            if all_sentences[i]['paraphrased'] == False:
-                # batch.append(all_sentences[i]['sentence'])
-                # all_sentences[i]['paraphrased'] = True
-                batch[i] = all_sentences[i]
+        for key in tracker:
+            if tracker[key]['paraphrased'] == False:
+                batch[key] = tracker[key]['sentence']
                 found += 1
                 if found == batch_size:
                     break
-
         return batch
     
     def hasUnparaphrased():
-        for i in range(len(all_sentences)):
-            if all_sentences[i]['paraphrased'] == False:
+        for key in tracker:
+            if tracker[key]['paraphrased'] == False:
                 return True
         return False
     
@@ -196,6 +187,7 @@ def runInBatch(all_sentences, batch_size=8):
         batch = createBatch()
         # print(f"Batch size: {len(batch)}")
         batchItems = [batch[item]['sentence'] for item in batch]
+        bad_words_ids = get_tokens_as_list(word_list=negations)
         paraphrases = paraphrase(batchItems, bad_words_ids=bad_words_ids)
         modelCalled += 1
         negated, cues = negCues(paraphrases)
@@ -203,7 +195,6 @@ def runInBatch(all_sentences, batch_size=8):
         for cue in cues: 
             if cue.strip() not in negations:
                 negations.append(cue.strip())
-                bad_words_ids = get_tokens_as_list(word_list=negations)
         
         m = 0
         for key in batch:
@@ -213,6 +204,8 @@ def runInBatch(all_sentences, batch_size=8):
                 pared += 1
             m += 1
         print(f"Done with {pared} out of {len(all_sentences)} instances. current size of negations: {len(negations)}, model called: {modelCalled}", end='\r')
+    
+    
     try:
         # check if negation.pkl exists
         if os.path.exists("negation.pkl"):
