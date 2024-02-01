@@ -156,6 +156,7 @@ import os
 def runInBatch(all_sentences, batch_size=8):
     # create a dict
     pared = 0
+    modelCalled = 0
     tracker = {}
     for i in range(len(all_sentences)):
         all_sentences[i]['paraphrased'] = False
@@ -196,6 +197,7 @@ def runInBatch(all_sentences, batch_size=8):
         # print(f"Batch size: {len(batch)}")
         batchItems = [batch[item]['sentence'] for item in batch]
         paraphrases = paraphrase(batchItems, bad_words_ids=bad_words_ids)
+        modelCalled += 1
         negated, cues = negCues(paraphrases)
 
         for cue in cues: 
@@ -210,7 +212,7 @@ def runInBatch(all_sentences, batch_size=8):
                 tracker[key]['paraphrases'] = paraphrases[m]
                 pared += 1
             m += 1
-        print(f"Done with {pared} out of {len(all_sentences)} instances.", end='\r')
+        print(f"Done with {pared} out of {len(all_sentences)} instances. current size of negations: {len(negations)}, model called: {modelCalled}", end='\r')
     try:
         # check if negation.pkl exists
         if os.path.exists("negation.pkl"):
