@@ -104,7 +104,7 @@ from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 device = "cuda"
 
 model2 = AutoModelForSeq2SeqLM.from_pretrained("humarin/chatgpt_paraphraser_on_T5_base").to(device)
-tokenizer2 = AutoTokenizer.from_pretrained("humarin/chatgpt_paraphraser_on_T5_base", add_prefix_space=True)
+tokenizer2 = AutoTokenizer.from_pretrained("humarin/chatgpt_paraphraser_on_T5_base", add_prefix_space=True, do_lower_case=False)
 
 def get_tokens_as_list(word_list):
     "Converts a sequence of words into a list of tokens"
