@@ -19,7 +19,7 @@ from transformers import (BertTokenizer,
 from module.model import DetectNeg
 from module.batch import Batchprep
 from preprocessing import Dataprep, DataprepFile
-import util
+import util2 as util
 
 
 
@@ -54,14 +54,9 @@ with open(config_path) as json_file_obj:
 
 # Set the seed    
 set_seed(params["seed"]) 
-use_fewshot = params["use_fewshot"]
-if use_fewshot:
-    lan = params["fewshot_lan"]
-    model_path = params["fewshot_shot_model"][lan]
-    eval_paths = [(lan, params["test_path_fewshot"][lan])]
-else:
-    model_path = params["best_model_path"]
-    eval_paths = [ (name, path) for name, path in params["evaluate_paths"].items()]
+
+model_path = params["best_model_path"]
+eval_paths = [ (name, path) for name, path in params["evaluate_paths"].items()]
     
 # Model Load
 map_location = 'cuda:{}'.format(params["device"]) if params["use_gpu"] else 'cpu'
@@ -82,35 +77,23 @@ model.eval()
 # Get the tokenizer
 tokenizer = RobertaTokenizer.from_pretrained(params["RoBERTa-base-path"], do_lower_case=False)
 
-if True:
-    dev_data = DataprepFile().preprocess(input_path)
+def negCues(sents):
+    '''
+        - negated: an array of boolean values, where True indicates that the sentence is negated.
+        - cues: an array of strings, where each string is a cue word that indicates negation.
+    '''
+    dev_data = DataprepFile().preprocess(sents)
     dev_size = len(dev_data["tokens"])
-
     dev_output = []
     dev_batch_num = int(np.ceil(dev_size/params["dev_batch_size"]))
     dev_iterator = Batchprep().get_a_batch(params, vocabs, tokenizer, dev_data, dev_size, dev_batch_num, device, shuffle=False)
     for dev_batch_idx in range(dev_batch_num):
         dev_batch_data, dev_batch_labels = next(dev_iterator)
         dev_batch_output = model.predict(dev_batch_data)
-        
         dev_output.extend(dev_batch_output)   
-        
-    measures = util.predict_only(dev_output, dev_data, vocabs, output_path)
+    negated, cues = util.predict_only(dev_output, dev_data, vocabs)
 
-
-def negCues(sentences):
-    '''
-        - negated: an array of boolean values, where True indicates that the sentence is negated.
-        - cues: an array of strings, where each string is a cue word that indicates negation.
-    '''
-    negated = []
-    cues = []
-    pass
     return negated, cues
-
-
-
-
 
 
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
@@ -166,7 +149,7 @@ def paraphrase(
 
 
 
-def runInBatch(all_sentences, batch_size=16):
+def runInBatch(all_sentences, batch_size=8):
     # create a dict
     pared = 0
     tracker = {}
@@ -183,7 +166,7 @@ def runInBatch(all_sentences, batch_size=16):
     def createBatch():
         batch = {}
         found = 0
-        
+
         for i in range(len(all_sentences)):
             if all_sentences[i]['paraphrased'] == False:
                 # batch.append(all_sentences[i]['sentence'])

@@ -512,14 +512,14 @@ class DataprepFile():
                 sents.append(line)                                      
         return sents
         
-    def preprocess(self, file_path, delim="\t"):
+    def preprocess(self, sents, file_path, delim="\t"):
         """
         Read the sentences in the file to and preprocess so that cue-detector can read the data.
         :param file_path: path to the input file
         :param delim: delimiter in each line of the input file.
         """
         
-        sents = self.read_file(file_path, delim)
+        # sents = self.read_file(file_path, delim)
         #print("sents: {}".format(sents))
         data = defaultdict(list)
         for sent in sents:         
