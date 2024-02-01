@@ -192,6 +192,13 @@ def runInBatch(all_sentences, batch_size=8):
         modelCalled += 1
         negated, cues = negCues(paraphrases)
 
+        for paraphrase in paraphrases:
+            for neg in negations:
+                if neg in paraphrase:
+                    print(f"Found negation: {neg} in {paraphrase}")
+            
+
+
         for cue in cues: 
             if cue.strip() not in negations:
                 negations.append(cue.strip())
@@ -202,11 +209,6 @@ def runInBatch(all_sentences, batch_size=8):
                 tracker[key]['paraphrased'] = True
                 tracker[key]['paraphrases'] = paraphrases[m]
                 pared += 1
-            else:
-                for neg in negations:
-                    if " " + neg + " " in paraphrases[m]:
-                        print(f"Found negation: {neg} in {paraphrases[m]}")
-
             m += 1
         print(f"Done with {pared} out of {len(all_sentences)} instances. current size of negations: {len(negations)}, model called: {modelCalled}, keys: {batch.keys()}", end='\r')
     
