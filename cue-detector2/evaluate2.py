@@ -243,7 +243,9 @@ def runInBatch(all_sentences, batch_size=8):
             pickle.dump(negations2, file)
     except Exception as e:
         print(e)
-
+    print(
+          f"Total instances: {len(all_sentences)}, instances paraphrased: {pared}, instances skipped: {skipped}, instances left: {len(all_sentences) - pared - skipped}, instances with no paraphrases: {len(all_sentences) - pared - skipped}, instances with no negations: {len(all_sentences) - pared - skipped}"
+          )
     return [tracker[key] for key in tracker]
 
     '''
