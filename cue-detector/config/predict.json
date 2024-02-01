@@ -11,7 +11,7 @@
   "best_model_path": "./model/fine-tuned/roberta_base/best_model.bin",
   "max_length":150,
   "features":{"tokens":768, "upos":200, "cues":200},
-  "RoBERTa-base-path": "./model/pre-trained/roberta_base/",
+  "RoBERTa-base-path": "roberta-base",
   "warmup_epoch":5,
   "bert_dropout":0.6,
   "bert_learning_rate":1e-5,
