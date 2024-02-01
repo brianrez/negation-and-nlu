@@ -217,7 +217,7 @@ def predict_only(pred_output, dev_data, vocabs):
             for pos in pos_seq:
                 if pos in sent_pos:
                     # pred_pos_text += sent[pos] + " "
-                    pred_pos_list.append(pos)
+                    pred_pos_list.append(sent[pos])
             # pred_pos_text += "| "                    
 
         if len(pred_pos_list)==0:
