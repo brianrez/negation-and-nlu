@@ -203,7 +203,7 @@ def runInBatch(all_sentences, batch_size=8):
                 tracker[key]['paraphrases'] = paraphrases[m]
                 pared += 1
             m += 1
-        print(f"Done with {pared} out of {len(all_sentences)} instances. current size of negations: {len(negations)}, model called: {modelCalled}, negated: {negated}", end='\r')
+        print(f"Done with {pared} out of {len(all_sentences)} instances. current size of negations: {len(negations)}, model called: {modelCalled}, keys: {tracker.keys()}", end='\r')
     
     
     try:

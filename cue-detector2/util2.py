@@ -211,22 +211,22 @@ def predict_only(pred_output, dev_data, vocabs):
         # sent_text = " ".join(sent)
         sent_pos = list(range(len(sent)))
 
-        # pred_pos_text = ""      
+        pred_pos_text = ""      
         for pos_seq in pred_pos:  #e.g. pos_seq= [[2,5], [10]]
             #pred_pos_text += "["
             for pos in pos_seq:
                 if pos in sent_pos:
-                    # pred_pos_text += sent[pos] + " "
+                    pred_pos_text += sent[pos] + " "
                     pred_pos_list.append(sent[pos])
-            # pred_pos_text += "| "                    
+            pred_pos_text += "| "                    
 
-        if len(pred_pos_list)==0:
+        if len(pred_pos_text)==0:
             # pred_pos_text = "no-cues"
             negated_list.append(False)
         else:
             negated_list.append(True)
                 
-        pred_pos = "[" + " | ".join([ ",".join([str(e) for e in l]) for l in  pred_pos]) + "]"
+        # pred_pos = "[" + " | ".join([ ",".join([str(e) for e in l]) for l in  pred_pos]) + "]"
         # file_obj.write(pred_pos_text.strip(" |") + delim + pred_pos + delim + sent_text)
         # file_obj.write("\n")
     return negated_list, pred_pos_list
