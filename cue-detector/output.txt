@@ -1,0 +1,7 @@
+negation_cues	cue_positions	sentence_tokens
+no-cues	[]	Although they are now illegal , many of these techniques were condoned under the law until that time .
+no-cues	[]	After the memo was publicized , a consensus by the courts found that those specific techniques , as practiced , were and would remain legal .
+no-cues	[]	The dates and order of composition of Cervantes ' entremeses are well documented .
+not	[17]	Ritual purification was a common practice among the peoples of Judea during this period and was thus not specific to the Essenes .
+no-cues	[]	In antiquity , the lighthouse functioned more as an entrance marker to ports than as a warning signal for reefs and promontories , like many modern lighthouses .
+no-cues	[]	Games between top players are rarely decided by more than a couple of moves .
