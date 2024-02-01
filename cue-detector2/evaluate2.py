@@ -161,7 +161,7 @@ def runInBatch(all_sentences, batch_size=8):
     for i in range(len(all_sentences)):
         all_sentences[i]['paraphrased'] = False
         tracker[i] = all_sentences[i]
-    
+    assert len(tracker) == len(all_sentences)
     def createBatch():
         batch = {}
         found = 0
@@ -203,7 +203,7 @@ def runInBatch(all_sentences, batch_size=8):
                 tracker[key]['paraphrases'] = paraphrases[m]
                 pared += 1
             m += 1
-        print(f"Done with {pared} out of {len(all_sentences)} instances. current size of negations: {len(negations)}, model called: {modelCalled}", end='\r')
+        print(f"Done with {pared} out of {len(all_sentences)} instances. current size of negations: {len(negations)}, model called: {modelCalled}, negated: {negated}", end='\r')
     
     
     try:
