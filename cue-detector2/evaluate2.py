@@ -158,7 +158,7 @@ def runInBatch(all_sentences, batch_size=8):
     pared = 0
     modelCalled = 0
     tracker = {}
-
+    skipped = 0
 
 
     for i in range(len(all_sentences)):
@@ -224,9 +224,12 @@ def runInBatch(all_sentences, batch_size=8):
                 tracker[key]['paraphrased'] = True
                 tracker[key]['paraphrases'] = ["No paraphrase found"]
                 pared += 1
+                skipped += 1    
         
-        print(f"Done with {pared} out of {len(all_sentences)} instances. current size of negations: {len(negations)}, model called: {modelCalled}, keys: {batch.keys()}", end='\r')
-    
+        print(f"Done with {pared} out of {len(all_sentences)} instances. current size of negations: {len(negations)}, model called: {modelCalled}, keys: {batch.keys()}, skipped: {skipped}", end='\r')
+        print()
+    print(f"Skipped {skipped} instances")
+    print()
     
     try:
         # check if negation.pkl exists
