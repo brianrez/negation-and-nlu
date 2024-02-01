@@ -190,8 +190,7 @@ def runInBatch(all_sentences, batch_size=8):
     while hasUnparaphrased():
         batch = createBatch()
         print(f"Batch size: {len(batch)}")
-        print(type(batch))
-        batchItems = [item['sentence'] for item in batch]
+        batchItems = [batch[item]['sentence'] for item in batch]
         paraphrases = paraphrase(batchItems, bad_words_ids=bad_words_ids)
         negated, cues = negCues(paraphrases)
 
