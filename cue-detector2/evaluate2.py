@@ -158,6 +158,9 @@ def runInBatch(all_sentences, batch_size=8):
     pared = 0
     modelCalled = 0
     tracker = {}
+
+
+
     for i in range(len(all_sentences)):
         all_sentences[i]['paraphrased'] = False
         tracker[i] = all_sentences[i]
@@ -184,6 +187,8 @@ def runInBatch(all_sentences, batch_size=8):
     bad_words_ids = get_tokens_as_list(word_list=negations)
     
     while hasUnparaphrased():
+        newNeg = False
+        newSuc = False
         batch = createBatch()
         # print(f"Batch size: {len(batch)}")
         batchItems = [batch[item]['sentence'] for item in batch]
@@ -202,6 +207,7 @@ def runInBatch(all_sentences, batch_size=8):
         for cue in cues: 
             if cue.strip() not in negations:
                 negations.append(cue.strip())
+                newNeg = True
         
         m = 0
         for key in batch:
@@ -209,7 +215,16 @@ def runInBatch(all_sentences, batch_size=8):
                 tracker[key]['paraphrased'] = True
                 tracker[key]['paraphrases'] = paraphrases[m]
                 pared += 1
+                newSuc = True
             m += 1
+
+        if not newNeg and not newSuc:
+            print("No new negations or successful paraphrases")
+            for key in batch:
+                tracker[key]['paraphrased'] = True
+                tracker[key]['paraphrases'] = ["No paraphrase found"]
+                pared += 1
+        
         print(f"Done with {pared} out of {len(all_sentences)} instances. current size of negations: {len(negations)}, model called: {modelCalled}, keys: {batch.keys()}", end='\r')
     
     
