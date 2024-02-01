@@ -194,7 +194,7 @@ def runInBatch(all_sentences, batch_size=8):
 
         for par in paraphrases:
             for neg in negations:
-                if neg in par:
+                if " " + neg + " " in par:
                     print(f"Found negation: {neg} in {par}")
             
 
