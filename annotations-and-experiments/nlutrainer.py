@@ -117,7 +117,7 @@ def run(task, model_type, setting, lr=None, batch_size=None, model_path=None):
     run_args = main_runscript.RunConfiguration(
         jiant_task_container_config_path=params["run_config"],
         output_dir="./runs/" + task,
-        hf_pretrained_model_name_or_path="mhr2004" + model_path,
+        hf_pretrained_model_name_or_path= model_path,
         # model_type=MODEL_TYPE,
         model_path=params["model_path"],
         model_config_path=params["model_config_path"],
@@ -180,7 +180,7 @@ if __name__ == "__main__":
         # sys.path.insert(0, "./jiant")
 
         export_model.export_model(
-                hf_pretrained_model_name_or_path="mhr2004/" + args.model_path,
+                hf_pretrained_model_name_or_path= args.model_path,
                 output_base_path=f"./models/{args.model_name}",
             )
         
