@@ -100,3 +100,12 @@ PytorchStreamReader failed reading zip archive: failed finding central directory
 ['qnli', 'roberta-large', 'mo', '5e-5']
 Ran out of input
 --------------------------------------------------
+['commonsenseqa', 'roberta-large', 'ch', '1e-4']
+[Errno 2] No such file or directory: '/home/cc/negation-and-nlu/annotations-and-experiments/content/exp/tasks/data/commonsenseqa/train.jsonl'
+--------------------------------------------------
+['commonsenseqa', 'roberta-large', 'mo', '5e-5']
+[Errno 2] No such file or directory: '/home/cc/negation-and-nlu/annotations-and-experiments/content/exp/tasks/data/commonsenseqa/train.jsonl'
+--------------------------------------------------
+['commonsenseqa', 'roberta-large', 'mo', '1e-4']
+[Errno 2] No such file or directory: '/home/cc/negation-and-nlu/annotations-and-experiments/content/exp/tasks/data/commonsenseqa/train.jsonl'
+--------------------------------------------------

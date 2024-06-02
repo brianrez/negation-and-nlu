@@ -5,11 +5,12 @@ import csv
 import torch
 
 class metrics:
-    def __init__(self, task, model, setting, lr):
+    def __init__(self, task, model, setting, lr, bs=None):
         self.task = task
         self.model = model
         self.setting = setting
         self.lr = lr
+        self.bs = bs
 
         self.data = None
         self.preds = None
@@ -26,7 +27,7 @@ class metrics:
         if not os.path.exists(pth):
             os.makedirs(pth)
 
-        with open(f'./results/{self.task}/{self.setting}_{self.model}_{self.lr}.txt', 'w') as f:
+        with open(f'./results/{self.task}/{self.setting}_{self.model}_{self.lr}_{self.bs}.txt', 'w') as f:
             f.write(self.results_str)
     
     def write_to_tex(self):
@@ -34,13 +35,13 @@ class metrics:
         if not os.path.exists(pth):
             os.makedirs(pth)
 
-        with open(f'./results/{self.task}/{self.setting}_{self.model}_{self.lr}.tex', 'w') as f:
+        with open(f'./results/{self.task}/{self.setting}_{self.model}_{self.lr}_{self.bs}.tex', 'w') as f:
             f.write(self.tex_results)
         print(self.tex_results)
 
     def read_pred_data(self):
         self.data = Jsonl().read(f'./data/{self.task}/or/val.jsonl')
-        self.preds = torch.load(f'./preds/{self.task}/{self.setting}_{self.model}_{self.lr}.pt')
+        self.preds = torch.load(f'./preds/{self.task}/{self.setting}_{self.model}_{self.lr}_{self.bs}.pt')
 
     def commonsenseqa(self):
         label2id = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4}
@@ -389,18 +390,26 @@ if __name__=="__main__":
         # ['wsc', 'large', 'ch', '1e-6'],
         # ['wsc', 'large', 'mo', '1e-6'],
 
-        ["wic", "large", "ch", "1e-6"],
-        ["wic", "large", "ch", "5e-6"],
-        ["wic", "large", "ch", "1e-5"],
-        ["wic", "large", "ch", "5e-5"],
-        ["wic", "large", "ch", "1e-4"],      
+        # ["wic", "large", "ch", "1e-6"],
+        # ["wic", "large", "ch", "5e-6"],
+        # ["wic", "large", "ch", "1e-5"],
+        # ["wic", "large", "ch", "5e-5"],
+        # ["wic", "large", "ch", "1e-4"],  
+         
+        # ["qnli", "large", "mo", "1e-6", 16],
+        # ["qnli", "large", "mo", "5e-6", 16],
+        # ["qnli", "large", "mo", "1e-5", 16],
+        # ["qnli", "large", "mo", "5e-5", 16],
+        # ["qnli", "large", "mo", "1e-4", 16],    
+        ['qnli', 'large', 'mo', '1e-5', 16]
     ]
     
     for exp_id in exp_ids:
-        try:
-            task, model, setting, lr = exp_id
+        # try:
+        if True:
+            task, model, setting, lr, bs = exp_id
             print(exp_id)
-            m = metrics(task, model, setting, lr)
+            m = metrics(task, model, setting, lr, bs)
             m.read_pred_data()
             if task == 'commonsenseqa':
                 m.commonsenseqa()
@@ -414,7 +423,8 @@ if __name__=="__main__":
                 m.stsb()
             m.write_to_text()
             m.write_to_tex()
-        except:
+        else:
+        # except:
             print('error')
             pass
 

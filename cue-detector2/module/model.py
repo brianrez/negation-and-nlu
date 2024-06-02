@@ -9,7 +9,7 @@ from transformers import (BertModel,
                           RobertaModel,
                           AutoModelForMaskedLM)
 import torch.nn.functional as F
-from torchcrf import CRF
+from TorchCRF import CRF
 from module.loss import CalcLoss
 
 
