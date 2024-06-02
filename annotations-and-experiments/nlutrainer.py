@@ -69,9 +69,9 @@ def run(task, model_type, setting, lr=None, batch_size=None, model_path=None):
             params["run_config"] = f"./run_configs/{task}_run_config_roberta_large.json"
 
     params["model_type"] = model_type
-    params["model_path"] = f"./models/{model_type}/model/{model_path}/model.p"
-    params["model_config_path"] = f"./models/{model_type}/model/{model_path}/config.json"
-    params["model_tokenizer_path"] = f"./models/{model_type}/tokenizer"
+    params["model_path"] = f"./models/{model_path}/model/model.p"
+    params["model_config_path"] = f"./models/{model_path}/model/config.json"
+    params["model_tokenizer_path"] = f"./models/{model_path}/tokenizer"
 
 
     os.makedirs("./run_configs/", exist_ok=True)
