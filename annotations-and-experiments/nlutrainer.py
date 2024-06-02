@@ -163,13 +163,6 @@ if __name__ == "__main__":
     parser.add_argument('--learning_rate', type=float, default=1e-5)
     args = parser.parse_args()
     
-    exp_ids = [
-        ["qnli", "roberta-large", "mo", "1e-6", 16],
-        ["qnli", "roberta-large", "mo", "5e-6", 16],
-        ["qnli", "roberta-large", "mo", "1e-5", 16],
-        ["qnli", "roberta-large", "mo", "5e-5", 16],
-        ["qnli", "roberta-large", "mo", "1e-4", 16],
-    ]
 
     errors = open("errors.txt", "a")
     dones = open("dones.txt", "a")
