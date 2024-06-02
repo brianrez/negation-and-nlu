@@ -181,7 +181,7 @@ if __name__ == "__main__":
 
         export_model.export_model(
                 hf_pretrained_model_name_or_path="mhr2004/" + args.model_path,
-                output_base_path=f"./models/{args.model_type}",
+                output_base_path=f"./models/{args.model_name}",
             )
         
         # task, model, setting, lr, bs = exp_id
