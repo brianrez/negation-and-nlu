@@ -172,10 +172,18 @@ if __name__ == "__main__":
         import sys
         # sys.path.insert(0, "./jiant")
 
-        export_model.export_model(
-                hf_pretrained_model_name_or_path= args.model_path,
-                output_base_path=f"./models/{args.model_path}",
-            )
+        try:
+            export_model.export_model(
+                    hf_pretrained_model_name_or_path= args.model_path,
+                    output_base_path=f"./models/{args.model_path}",
+                )
+        except Exception as e:
+            os.system(f"python3 addtokenizer.py --model_name {args.model_name} --model_path {args.model_path}")
+            export_model.export_model(
+                    hf_pretrained_model_name_or_path= args.model_path,
+                    output_base_path=f"./models/{args.model_path}",
+                )
+            
         
         # task, model, setting, lr, bs = exp_id
         # move_files(task, setting)
