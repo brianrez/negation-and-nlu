@@ -5,3 +5,6 @@ env/
 *.DS_Store
 negation-and-nlu/tasks/
 tasks/
+*.bin
+*.pkl
+cenv/
