@@ -181,7 +181,7 @@ if __name__ == "__main__":
 
         export_model.export_model(
                 hf_pretrained_model_name_or_path= args.model_path,
-                output_base_path=f"./models/{args.model_name}",
+                output_base_path=f"./models/{args.model_path}",
             )
         
         # task, model, setting, lr, bs = exp_id
@@ -197,7 +197,6 @@ if __name__ == "__main__":
         notif = (
             f'''
             Training of {args.task_name} with {args.model_path} and {setting} and {args.learning_rate} is completed!"
-            
             '''
         )
         requests.post(
@@ -207,7 +206,7 @@ if __name__ == "__main__":
 
     except Exception as e:
         notif = (
-            '''
+            f'''
             Training of {args.task_name} with {args.model_path} and {setting} and {args.learning_rate} failed!
             The error is: {e}
             '''
