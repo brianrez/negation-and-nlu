@@ -2,63 +2,33 @@
 
 # Define your inputs here. For example:
 inputs=(
-    "--task_name qnli --model_name roberta-base --model_path mhr2004/roberta-base-nsp-1000000-1e-06-32 --batch_size 16 --learning_rate 1e-6"
-    "--task_name qnli --model_name roberta-base --model_path mhr2004/roberta-base-pp-1000000-1e-06-128 --batch_size 16 --learning_rate 1e-6"
-    "--task_name qnli --model_name roberta-base --model_path mhr2004/roberta-base-dual-1000000-1e-06-128 --batch_size 16 --learning_rate 1e-6"
-    
-    "--task_name qnli --model_name roberta-base --model_path mhr2004/roberta-base-nsp-1000000-1e-06-32 --batch_size 16 --learning_rate 5e-6"
-    "--task_name qnli --model_name roberta-base --model_path mhr2004/roberta-base-nsp-1000000-1e-06-32 --batch_size 16 --learning_rate 1e-5"
-    "--task_name qnli --model_name roberta-base --model_path mhr2004/roberta-base-nsp-1000000-1e-06-32 --batch_size 16 --learning_rate 5e-5"
-    "--task_name qnli --model_name roberta-base --model_path mhr2004/roberta-base-nsp-1000000-1e-06-32 --batch_size 16 --learning_rate 1e-4"
-        
-    "--task_name qnli --model_name roberta-base --model_path mhr2004/roberta-base-pp-1000000-1e-06-128 --batch_size 16 --learning_rate 5e-6"
-    "--task_name qnli --model_name roberta-base --model_path mhr2004/roberta-base-pp-1000000-1e-06-128 --batch_size 16 --learning_rate 1e-5"
-    "--task_name qnli --model_name roberta-base --model_path mhr2004/roberta-base-pp-1000000-1e-06-128 --batch_size 16 --learning_rate 5e-5"
-    "--task_name qnli --model_name roberta-base --model_path mhr2004/roberta-base-pp-1000000-1e-06-128 --batch_size 16 --learning_rate 1e-4"
-
-    "--task_name qnli --model_name roberta-base --model_path mhr2004/roberta-base-dual-1000000-1e-06-128 --batch_size 16 --learning_rate 5e-6"
-    "--task_name qnli --model_name roberta-base --model_path mhr2004/roberta-base-dual-1000000-1e-06-128 --batch_size 16 --learning_rate 1e-5"
-    "--task_name qnli --model_name roberta-base --model_path mhr2004/roberta-base-dual-1000000-1e-06-128 --batch_size 16 --learning_rate 5e-5"
-    "--task_name qnli --model_name roberta-base --model_path mhr2004/roberta-base-dual-1000000-1e-06-128 --batch_size 16 --learning_rate 1e-4"
-
-
-    "--task_name wsc --model_name roberta-base --model_path mhr2004/roberta-base-nsp-1000000-1e-06-32 --batch_size 16 --learning_rate 1e-6"
-    "--task_name wsc --model_name roberta-base --model_path mhr2004/roberta-base-nsp-1000000-1e-06-32 --batch_size 16 --learning_rate 5e-6"
-    "--task_name wsc --model_name roberta-base --model_path mhr2004/roberta-base-nsp-1000000-1e-06-32 --batch_size 16 --learning_rate 1e-5"
-    "--task_name wsc --model_name roberta-base --model_path mhr2004/roberta-base-nsp-1000000-1e-06-32 --batch_size 16 --learning_rate 5e-5"
-    "--task_name wsc --model_name roberta-base --model_path mhr2004/roberta-base-nsp-1000000-1e-06-32 --batch_size 16 --learning_rate 1e-4"
-        
-    "--task_name wsc --model_name roberta-base --model_path mhr2004/roberta-base-pp-1000000-1e-06-128 --batch_size 16 --learning_rate 1e-6"
-    "--task_name wsc --model_name roberta-base --model_path mhr2004/roberta-base-pp-1000000-1e-06-128 --batch_size 16 --learning_rate 5e-6"
-    "--task_name wsc --model_name roberta-base --model_path mhr2004/roberta-base-pp-1000000-1e-06-128 --batch_size 16 --learning_rate 1e-5"
-    "--task_name wsc --model_name roberta-base --model_path mhr2004/roberta-base-pp-1000000-1e-06-128 --batch_size 16 --learning_rate 5e-5"
-    "--task_name wsc --model_name roberta-base --model_path mhr2004/roberta-base-pp-1000000-1e-06-128 --batch_size 16 --learning_rate 1e-4"
-
-    "--task_name wsc --model_name roberta-base --model_path mhr2004/roberta-base-dual-1000000-1e-06-128 --batch_size 16 --learning_rate 1e-6"
-    "--task_name wsc --model_name roberta-base --model_path mhr2004/roberta-base-dual-1000000-1e-06-128 --batch_size 16 --learning_rate 5e-6"
-    "--task_name wsc --model_name roberta-base --model_path mhr2004/roberta-base-dual-1000000-1e-06-128 --batch_size 16 --learning_rate 1e-5"
-    "--task_name wsc --model_name roberta-base --model_path mhr2004/roberta-base-dual-1000000-1e-06-128 --batch_size 16 --learning_rate 5e-5"
-    "--task_name wsc --model_name roberta-base --model_path mhr2004/roberta-base-dual-1000000-1e-06-128 --batch_size 16 --learning_rate 1e-4"
-
-
-
-    "--task_name wic --model_name roberta-base --model_path mhr2004/roberta-base-nsp-1000000-1e-06-32 --batch_size 16 --learning_rate 1e-6"
-    "--task_name wic --model_name roberta-base --model_path mhr2004/roberta-base-nsp-1000000-1e-06-32 --batch_size 16 --learning_rate 5e-6"
-    "--task_name wic --model_name roberta-base --model_path mhr2004/roberta-base-nsp-1000000-1e-06-32 --batch_size 16 --learning_rate 1e-5"
-    "--task_name wic --model_name roberta-base --model_path mhr2004/roberta-base-nsp-1000000-1e-06-32 --batch_size 16 --learning_rate 5e-5"
-    "--task_name wic --model_name roberta-base --model_path mhr2004/roberta-base-nsp-1000000-1e-06-32 --batch_size 16 --learning_rate 1e-4"
-        
-    "--task_name wic --model_name roberta-base --model_path mhr2004/roberta-base-pp-1000000-1e-06-128 --batch_size 16 --learning_rate 1e-6"
-    "--task_name wic --model_name roberta-base --model_path mhr2004/roberta-base-pp-1000000-1e-06-128 --batch_size 16 --learning_rate 5e-6"
-    "--task_name wic --model_name roberta-base --model_path mhr2004/roberta-base-pp-1000000-1e-06-128 --batch_size 16 --learning_rate 1e-5"
-    "--task_name wic --model_name roberta-base --model_path mhr2004/roberta-base-pp-1000000-1e-06-128 --batch_size 16 --learning_rate 5e-5"
-    "--task_name wic --model_name roberta-base --model_path mhr2004/roberta-base-pp-1000000-1e-06-128 --batch_size 16 --learning_rate 1e-4"
-
-    "--task_name wic --model_name roberta-base --model_path mhr2004/roberta-base-dual-1000000-1e-06-128 --batch_size 16 --learning_rate 1e-6"
-    "--task_name wic --model_name roberta-base --model_path mhr2004/roberta-base-dual-1000000-1e-06-128 --batch_size 16 --learning_rate 5e-6"
-    "--task_name wic --model_name roberta-base --model_path mhr2004/roberta-base-dual-1000000-1e-06-128 --batch_size 16 --learning_rate 1e-5"
-    "--task_name wic --model_name roberta-base --model_path mhr2004/roberta-base-dual-1000000-1e-06-128 --batch_size 16 --learning_rate 5e-5"
-    "--task_name wic --model_name roberta-base --model_path mhr2004/roberta-base-dual-1000000-1e-06-128 --batch_size 16 --learning_rate 1e-4"
+    "--task_name qnli --model_name roberta-base  --model_path mhr2004/roberta-base-dual-1000000-1e-06-128 --batch_size 16 --learning_rate 1e-5"
+    "--task_name qnli --model_name roberta-base  --model_path mhr2004/roberta-base-dual-1000000-1e-06-128 --batch_size 16 --learning_rate 1e-6"
+    "--task_name wsc  --model_name roberta-base  --model_path mhr2004/roberta-base-nsp-1000000-1e-06-32   --batch_size 16 --learning_rate 1e-6"
+    "--task_name qnli --model_name roberta-large --model_path mhr2004/roberta-large-dual-500000-1e-06-128 --batch_size 16 --learning_rate 1e-4"
+    "--task_name qnli --model_name roberta-large --model_path mhr2004/roberta-large-nsp-1000000-1e-06-32  --batch_size 16 --learning_rate 1e-6"
+    "--task_name qnli --model_name roberta-large --model_path mhr2004/roberta-large-nsp-1000000-1e-06-32  --batch_size 16 --learning_rate 5e-6"
+    "--task_name wic  --model_name roberta-base  --model_path mhr2004/roberta-base-nsp-1000000-1e-06-32   --batch_size 16 --learning_rate 5e-6"
+    "--task_name wic  --model_name roberta-large --model_path mhr2004/roberta-large-nsp-1000000-1e-06-32  --batch_size 16 --learning_rate 5e-5"
+    "--task_name wic  --model_name roberta-large --model_path mhr2004/roberta-large-pp-500000-1e-06-128   --batch_size 16 --learning_rate 1e-5"
+    "--task_name wic  --model_name roberta-large --model_path mhr2004/roberta-large-pp-500000-1e-06-128   --batch_size 16 --learning_rate 5e-5"
+    "--task_name wic  --model_name roberta-large --model_path mhr2004/roberta-large-pp-500000-1e-06-128   --batch_size 16 --learning_rate 1e-4"
+    "--task_name wic  --model_name roberta-large --model_path mhr2004/roberta-large-dual-500000-1e-06-128 --batch_size 16 --learning_rate 1e-6"
+    "--task_name wic  --model_name roberta-large --model_path mhr2004/roberta-large-dual-500000-1e-06-128 --batch_size 16 --learning_rate 5e-6"
+    "--task_name wic  --model_name roberta-large --model_path mhr2004/roberta-large-dual-500000-1e-06-128 --batch_size 16 --learning_rate 1e-5"
+    "--task_name wic  --model_name roberta-large --model_path mhr2004/roberta-large-dual-500000-1e-06-128 --batch_size 16 --learning_rate 5e-5"
+    "--task_name wic  --model_name roberta-large --model_path mhr2004/roberta-large-dual-500000-1e-06-128 --batch_size 16 --learning_rate 1e-4"
+    "--task_name wsc  --model_name roberta-large --model_path mhr2004/roberta-large-nsp-1000000-1e-06-32  --batch_size 16 --learning_rate 1e-5"
+    "--task_name wsc  --model_name roberta-large --model_path mhr2004/roberta-large-nsp-1000000-1e-06-32  --batch_size 16 --learning_rate 5e-5"
+    "--task_name wsc  --model_name roberta-large --model_path mhr2004/roberta-large-nsp-1000000-1e-06-32  --batch_size 16 --learning_rate 1e-4"
+    "--task_name wsc  --model_name roberta-large --model_path mhr2004/roberta-large-pp-500000-1e-06-128   --batch_size 16 --learning_rate 1e-6"
+    "--task_name wsc  --model_name roberta-large --model_path mhr2004/roberta-large-pp-500000-1e-06-128   --batch_size 16 --learning_rate 5e-6"
+    "--task_name wsc  --model_name roberta-large --model_path mhr2004/roberta-large-pp-500000-1e-06-128   --batch_size 16 --learning_rate 1e-5"
+    "--task_name wsc  --model_name roberta-large --model_path mhr2004/roberta-large-pp-500000-1e-06-128   --batch_size 16 --learning_rate 5e-5"
+    "--task_name wsc  --model_name roberta-large --model_path mhr2004/roberta-large-pp-500000-1e-06-128   --batch_size 16 --learning_rate 1e-4"
+    "--task_name wsc  --model_name roberta-large --model_path mhr2004/roberta-large-dual-500000-1e-06-128 --batch_size 16 --learning_rate 1e-6"
+    "--task_name wsc  --model_name roberta-large --model_path mhr2004/roberta-large-dual-500000-1e-06-128 --batch_size 16 --learning_rate 5e-6"
+    "--task_name wsc  --model_name roberta-large --model_path mhr2004/roberta-large-dual-500000-1e-06-128 --batch_size 16 --learning_rate 1e-5"
 )
 
 # Maximum number of concurrent jobs, equals to the number of GPUs
