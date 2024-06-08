@@ -37,7 +37,7 @@ inputs=(
 )
 
 # Maximum number of concurrent jobs, equals to the number of GPUs
-MAX_JOBS=4
+MAX_JOBS=3
 
 # Function to check and wait for available job slot
 check_jobs() {
@@ -53,6 +53,9 @@ for i in "${!inputs[@]}"; do
   
   # Calculate GPU index: i % MAX_JOBS ensures cycling through GPUs 0 to MAX_JOBS-1
   gpu_index=$((i % MAX_JOBS))
+
+  # add 1 to gpu_index to match the GPU number
+  gpu_index=$((gpu_index + 1))
 
   echo "Starting job $i on GPU $gpu_index"
   echo "CUDA_VISIBLE_DEVICES=$gpu_index python3 nlutrainer.py ${inputs[$i]}"
