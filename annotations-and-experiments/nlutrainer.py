@@ -140,7 +140,7 @@ def run(task, model_type, setting, lr=None, batch_size=None, model_path=None):
         + "/"
         + setting
         + "_"
-        + model_path[8:]
+        + model_path
         + "_"
         + str(params["learning_rate"])
         + "_"

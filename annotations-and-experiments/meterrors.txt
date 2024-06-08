@@ -1,0 +1,4 @@
+task: qnli, model: roberta-base-nsp-1000000-1e-06-32, lr: 1e-06, bs: 16
+[Errno 2] No such file or directory: './preds/qnli/or_roberta-base-nsp-1000000-1e-06-32_1e-06_16.pt'
+task: qnli, model: roberta-base-dual-1000000-1e-06-128, lr: 1e-06, bs: 16
+[Errno 2] No such file or directory: './preds/qnli/or_roberta-base-dual-1000000-1e-06-128_1e-06_16.pt'

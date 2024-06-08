@@ -1,0 +1,41 @@
+all: 0.5961538461538461
+all:               precision    recall  f1-score   support
+
+           0       0.73      0.58      0.64        66
+           1       0.46      0.63      0.53        38
+
+    accuracy                           0.60       104
+   macro avg       0.60      0.60      0.59       104
+weighted avg       0.63      0.60      0.60       104
+
+W/O negation: 0.5769230769230769
+W/O negation:               precision    recall  f1-score   support
+
+           0       0.80      0.47      0.59        34
+           1       0.44      0.78      0.56        18
+
+    accuracy                           0.58        52
+   macro avg       0.62      0.62      0.58        52
+weighted avg       0.67      0.58      0.58        52
+
+W/ negation: 0.6153846153846154
+W/ negation:               precision    recall  f1-score   support
+
+           0       0.69      0.69      0.69        32
+           1       0.50      0.50      0.50        20
+
+    accuracy                           0.62        52
+   macro avg       0.59      0.59      0.59        52
+weighted avg       0.62      0.62      0.62        52
+
+W/ negation and important: No data
+W/ negation and not important: 0.6153846153846154
+W/ negation and not important:               precision    recall  f1-score   support
+
+           0       0.69      0.69      0.69        32
+           1       0.50      0.50      0.50        20
+
+    accuracy                           0.62        52
+   macro avg       0.59      0.59      0.59        52
+weighted avg       0.62      0.62      0.62        52
+
