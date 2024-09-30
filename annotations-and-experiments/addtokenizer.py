@@ -1,8 +1,10 @@
-from transformers import RobertaTokenizer
-from huggingface_hub import HfApi, Repository, login
 import os
 import shutil
 from argparse import ArgumentParser
+
+from huggingface_hub import HfApi, Repository, login
+from transformers import RobertaTokenizer
+
 args = ArgumentParser()
 args.add_argument('--model_name', type=str, default='roberta-base')
 args.add_argument('--model_path', type=str, default='roberta-base')

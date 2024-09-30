@@ -65,8 +65,8 @@ def run(task, model_type, setting, lr=None, batch_size=None, model_path=None):
 
     params["model_type"] = model_type
     params["model_path"] = f"./models/{model_path}/model/model.p"
-    params["model_config_path"] = f"./models/{model_type}/model/config.json"
-    params["model_tokenizer_path"] = f"./models/{model_type}/tokenizer"
+    params["model_config_path"] = f"./models/{model_path}/model/config.json"
+    params["model_tokenizer_path"] = f"./models/{model_path}/tokenizer"
 
 
     os.makedirs("./run_configs/", exist_ok=True)
@@ -174,17 +174,11 @@ if __name__ == "__main__":
         # sys.path.insert(0, "./jiant")
 
         try:
-            print("reached here")
             export_model.export_model(
                     hf_pretrained_model_name_or_path= args.model_path,
                     output_base_path=f"./models/{args.model_path}",
                 )
-            print("reached here to copy")
-            os.system(f"cp -r ./models/{args.model_name}/tokenizer ./models/{args.model_path}/")
-            os.system(f"cp ./models/{args.model_name}/config.json ./models/{args.model_path}/")
         except Exception as e:
-            os.system(f"cp -r ./models/{args.model_name}/tokenizer ./models/{args.model_path}/")
-            os.system(f"cp ./models/{args.model_name}/config.json ./models/{args.model_path}/")
             print("successfully copied")
             os.system(f"python3 addtokenizer.py --model_name {args.model_name} --model_path {args.model_path}")
 
