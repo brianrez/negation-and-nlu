@@ -65,7 +65,7 @@ def run(task, model_type, setting, lr=None, batch_size=None, model_path=None):
 
     params["model_type"] = model_type
     params["model_path"] = f"./models/{model_path}/model/model.p"
-    params["model_config_path"] = f"./models/{model_path}/model/config.json"
+    params["model_config_path"] = f"./models/{model_type}/model/config.json"
     params["model_tokenizer_path"] = f"./models/{model_type}/tokenizer"
 
 
