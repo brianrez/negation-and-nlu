@@ -28,7 +28,7 @@ os.makedirs(tokenizer_dir, exist_ok=True)
 tokenizer.save_pretrained(tokenizer_dir)
 
 # List of tokenizer files
-tokenizer_files = ["vocab.txt", "merges.txt", "tokenizer_config.json", "special_tokens_map.json"]
+tokenizer_files = ["vocab.txt", "tokenizer_config.json", "special_tokens_map.json"]
 
 # Copy tokenizer files to the custom model directory
 for file_name in tokenizer_files:
@@ -42,5 +42,7 @@ repo.git_commit("Add roberta-base tokenizer files")
 
 # Push the changes to the Hugging Face Hub
 repo.git_push()
+
+os.system("rm -rf " + repo_local_dir)
 
 print("Tokenizer files have been added and pushed to the Hugging Face Hub.")
