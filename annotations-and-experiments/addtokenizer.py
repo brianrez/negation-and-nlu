@@ -28,7 +28,7 @@ os.makedirs(tokenizer_dir, exist_ok=True)
 tokenizer.save_pretrained(tokenizer_dir)
 
 # List of tokenizer files
-tokenizer_files = ["vocab.json", "merges.txt", "tokenizer_config.json", "special_tokens_map.json"]
+tokenizer_files = ["vocab.txt", "merges.txt", "tokenizer_config.json", "special_tokens_map.json"]
 
 # Copy tokenizer files to the custom model directory
 for file_name in tokenizer_files:
