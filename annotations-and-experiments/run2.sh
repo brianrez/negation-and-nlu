@@ -39,7 +39,7 @@ MAX_JOBS=4
 # Function to check and wait for available job slot
 check_jobs() {
   while [ $(jobs -p | wc -l) -ge $MAX_JOBS ]; do
-    sleep 2
+    sleep 30
   done
 }
 
