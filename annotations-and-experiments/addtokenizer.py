@@ -43,6 +43,6 @@ repo.git_commit("Add roberta-base tokenizer files")
 # Push the changes to the Hugging Face Hub
 repo.git_push()
 
-os.system("rm -rf " + repo_local_dir)
+# os.system("rm -rf " + repo_local_dir)
 
 print("Tokenizer files have been added and pushed to the Hugging Face Hub.")
