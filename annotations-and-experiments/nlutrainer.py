@@ -178,6 +178,8 @@ if __name__ == "__main__":
                     hf_pretrained_model_name_or_path= args.model_path,
                     output_base_path=f"./models/{args.model_path}",
                 )
+            os.system(f"cp -r ./models/{args.model_type}/tokenizer ./models/{args.model_path}/")
+            os.system(f"cp ./models/{args.model_type}/config.json ./models/{args.model_path}/")
         except Exception as e:
             os.system(f"python3 addtokenizer.py --model_name {args.model_name} --model_path {args.model_path}")
             export_model.export_model(
