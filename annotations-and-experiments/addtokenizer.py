@@ -3,7 +3,7 @@ import shutil
 from argparse import ArgumentParser
 
 from huggingface_hub import HfApi, Repository, login
-from transformers import RobertaTokenizer
+from transformers import AutoTokenizer
 
 args = ArgumentParser()
 args.add_argument('--model_name', type=str, default='roberta-base')
@@ -22,7 +22,7 @@ repo_local_dir = "./" + args.model_path
 repo = Repository(local_dir=repo_local_dir, clone_from=repo_id)
 
 # Download the tokenizer files from the `roberta-base` model
-tokenizer = RobertaTokenizer.from_pretrained(args.model_name)
+tokenizer = AutoTokenizer.from_pretrained(args.model_name)
 tokenizer_dir = os.path.join(repo_local_dir, args.model_name + "-tokenizer")
 os.makedirs(tokenizer_dir, exist_ok=True)
 tokenizer.save_pretrained(tokenizer_dir)
