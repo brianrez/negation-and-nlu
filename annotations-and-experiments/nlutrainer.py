@@ -174,10 +174,12 @@ if __name__ == "__main__":
         # sys.path.insert(0, "./jiant")
 
         try:
+            print("reached here")
             export_model.export_model(
                     hf_pretrained_model_name_or_path= args.model_path,
                     output_base_path=f"./models/{args.model_path}",
                 )
+            print("reached here to copy")
             os.system(f"cp -r ./models/{args.model_name}/tokenizer ./models/{args.model_path}/")
             os.system(f"cp ./models/{args.model_name}/config.json ./models/{args.model_path}/")
         except Exception as e:
