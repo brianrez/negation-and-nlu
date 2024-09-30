@@ -5,23 +5,18 @@ import sys
 
 sys.path.insert(0, "./jiant")
 
-import os
-
-import jiant.utils.python.io as py_io
-import jiant.scripts.download_data.runscript as downloader
-
-import jiant.proj.main.tokenize_and_cache as tokenize_and_cache
-import jiant.proj.main.export_model as export_model
-import jiant.proj.main.scripts.configurator as configurator
-import jiant.proj.main.runscript as main_runscript
-import jiant.utils.display as display
-
 import argparse
 import json
+import os
+
+import jiant.proj.main.export_model as export_model
+import jiant.proj.main.runscript as main_runscript
+import jiant.proj.main.scripts.configurator as configurator
+import jiant.proj.main.tokenize_and_cache as tokenize_and_cache
+import jiant.scripts.download_data.runscript as downloader
+import jiant.utils.display as display
+import jiant.utils.python.io as py_io
 import requests
-
-
-
 
 
 def move_files(task, setting):
@@ -71,7 +66,7 @@ def run(task, model_type, setting, lr=None, batch_size=None, model_path=None):
     params["model_type"] = model_type
     params["model_path"] = f"./models/{model_path}/model/model.p"
     params["model_config_path"] = f"./models/{model_path}/model/config.json"
-    params["model_tokenizer_path"] = f"./models/{model_path}/tokenizer"
+    params["model_tokenizer_path"] = f"./models/{model_type}/tokenizer"
 
 
     os.makedirs("./run_configs/", exist_ok=True)
@@ -172,8 +167,10 @@ if __name__ == "__main__":
     dones = open("dones.txt", "a")
     try:
         setting = "or"
-        import jiant.proj.main.export_model as export_model
         import sys
+
+        import jiant.proj.main.export_model as export_model
+
         # sys.path.insert(0, "./jiant")
 
         try:

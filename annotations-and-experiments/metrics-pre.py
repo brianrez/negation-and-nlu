@@ -366,13 +366,17 @@ def clas_rep_to_tex(dic):
 
 if __name__=="__main__":
     erros_files = open('meterrors.txt', 'a')
+    # models = [
+        # "roberta-large-nsp-1000000-1e-06-32",
+        # "roberta-large-pp-500000-1e-06-128",
+        # "roberta-large-dual-500000-1e-06-128",
+        # "roberta-base-pp-1000000-1e-06-128",
+        # "roberta-base-nsp-1000000-1e-06-32",
+        # "roberta-base-dual-1000000-1e-06-128"
+    # ]
     models = [
-        "roberta-large-nsp-1000000-1e-06-32",
-        "roberta-large-pp-500000-1e-06-128",
-        "roberta-large-dual-500000-1e-06-128",
-        "roberta-base-pp-1000000-1e-06-128",
-        "roberta-base-nsp-1000000-1e-06-32",
-        "roberta-base-dual-1000000-1e-06-128"
+        "roberta-base",
+        "roberta-large",
     ]
     lrs = [
         "1e-06",
@@ -381,7 +385,7 @@ if __name__=="__main__":
         "5e-05",
         "0.0001"
     ]
-    task = "wsc"
+    task = "qnli"
     bs = 16
     for path in models:
         for lr in lrs:
