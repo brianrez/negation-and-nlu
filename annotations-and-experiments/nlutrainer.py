@@ -146,10 +146,10 @@ def run(task, model_type, setting, lr=None, batch_size=None, model_path=None):
         os.makedirs("./preds/" + task + "/")
 
     os.system("cp ./runs/" + task + "/val_preds.p " + val_save_path)
-    os.system("git pull")
-    os.system(f"git add {val_save_path}")
-    os.system(f'git commit -m " {task} {model_path} {setting} {params["learning_rate"]} {params["train_batch_size"]}"')
-    os.system("git push")
+    # os.system("git pull")
+    # os.system(f"git add {val_save_path}")
+    # os.system(f'git commit -m " {task} {model_path} {setting} {params["learning_rate"]} {params["train_batch_size"]}"')
+    # os.system("git push")
 
 
 # settings: "ch", "or", "mo"
