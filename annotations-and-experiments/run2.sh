@@ -12,13 +12,6 @@ model_pathes=(
   "--model_name bert-base-uncased  --model_path mhr2004/bert-base-uncased-pp-1000000-1e-06-32"
   "--model_name bert-base-uncased  --model_path mhr2004/bert-base-uncased-nsp-1000000-1e-06-32"
   "--model_name bert-base-uncased  --model_path mhr2004/bert-base-uncased-dual-1000000-1e-06-32"
-
-  "--model_name bert-large-uncased --model_path mhr2004/bert-large-uncased-nsp-500000-1e-06-128"
-  "--model_name bert-large-uncased --model_path mhr2004/bert-large-uncased-pp-500000-1e-06-128"
-  "--model_name bert-large-uncased --model_path mhr2004/bert-large-uncased-dual-500000-1e-06-32"
-  "--model_name bert-base-uncased  --model_path mhr2004/bert-base-uncased-nsp-500000-1e-06-64"
-  "--model_name bert-base-uncased  --model_path mhr2004/bert-base-uncased-pp-500000-1e-06-64"
-  "--model_name bert-base-uncased  --model_path mhr2004/bert-base-uncased-dual-500000-1e-06-32"
 )
 
 for model_path in "${model_pathes[@]}"; do
