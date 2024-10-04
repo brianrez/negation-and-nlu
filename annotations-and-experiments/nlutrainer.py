@@ -129,6 +129,8 @@ def run(task, model_type, setting, lr=None, batch_size=None, model_path=None):
     main_runscript.run_loop(run_args)
     print("Training is completed!")
 
+    model_path = model_path.replace("/", "_")
+
     val_save_path = (
         "./preds/"
         + task
